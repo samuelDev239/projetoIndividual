@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+
+    
+}
+.tecla {
+    width: 50px;
+    height: 200px;
+    border: 1px solid black;
+
+}
+.tecla.sus {
+    width: 40px;
+    height: 100px;
+    background-color: #1d1d1d;
+    border-radius: 1px solid black;
+
+}
+.tecla.sus.ativo {
+    width: 40px;
+    height: 100px;
+    background-color: #41c71f;
+
+}
+.sustenidos {
+    display: flex;
+    position: absolute;
+    left: 30px;
+    top: 10px;
+    gap: 3.5rem;
+}
+.div {
+    width: auto;
+    display: flex;
+    gap: 1.2rem;
+}
+.div.one {
+
+}
+.tecla.ativo {
+    background-color: #41c71f;
+}

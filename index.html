@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tecla" id="dó"  onclick="ativarDo()"></div>
+        <div class="tecla" id="ré" onclick="ativarRe()"></div>
+        <div class="tecla" id="mi"  onclick="ativarMi()"></div>
+        <div class="tecla" id="fa"  onclick="ativarFa()"></div>
+        <div class="tecla" id="sol"  onclick="ativarSol()"></div>
+        <div class="tecla" id="la"  onclick="ativarLa()"></div>
+        <div class="tecla" id="si"  onclick="ativarSi()"></div>
+    </div>
+    <div class="sustenidos">
+        <div class="div one">
+        <div class="tecla sus" id="dóSustenido"  onclick="ativarDoSus()"></div>
+        <div class="tecla sus" id="réSustenido"  onclick="ativarReSus()"></div>
+    </div>
+    <div class="div two">
+        <div class="tecla sus" id="faSustenido"  onclick="ativarFaSus()"></div>
+        <div class="tecla sus" id="solSustenido"  onclick="ativarSolSus()"></div>
+        <div class="tecla sus" id="laSustenido"  onclick="ativarLaSus()"></div>
+    </div>
+
+
+
+
+
+
+
+    </div>
+    <button>ver</button>
+    
+</body>
+</html>
+<script>
+    var ativoDo = false
+    var ativoDoSustenido = false
+    var ativoRe = false
+    var ativoReSustenido = false
+    var ativoMi = false
+    var ativoFa = false
+    var ativoFaSustenido = false
+    var ativoSol = false
+    var ativoSolSustenido = false
+    var ativoLa = false
+    var ativoLaSustenido = false
+    var ativoSi = false
+   function ativarDo(){
+    const tecla = document.querySelector('#dó');
+    tecla.classList.toggle('ativo');
+    if(ativoDo){
+        ativoDo = false
+    } else {
+        ativoDo = true
+
+    }
+   }
+   function ativarRe(){
+    const tecla = document.querySelector('#ré');
+    tecla.classList.toggle('ativo');
+    if(ativoRe){
+        ativoRe = false
+    } else {
+        ativoRe = true
+
+    }
+   }
+   function ativarMi(){
+    const tecla = document.querySelector('#mi');
+    tecla.classList.toggle('ativo');
+    if(ativoMi){
+        ativoMi = false
+    } else {
+        ativoMi = true
+
+    }
+   }
+   function ativarFa(){
+    const tecla = document.querySelector('#fa');
+    tecla.classList.toggle('ativo');
+    if(ativoFa){
+        ativoFa = false
+    } else {
+        ativoFa = true
+
+    }
+   }
+   function ativarSol(){
+    const tecla = document.querySelector('#sol');
+    tecla.classList.toggle('ativo');
+    if(ativoSol){
+        ativoSol = false
+    } else {
+        ativoSol = true
+
+    }
+   }
+   function ativarLa(){
+    const tecla = document.querySelector('#la');
+    tecla.classList.toggle('ativo');
+    if(ativoLa){
+        ativoLa = false
+    } else {
+        ativoLa = true
+
+    }
+   }
+   function ativarSi(){
+    const tecla = document.querySelector('#si');
+    tecla.classList.toggle('ativo');
+    if(ativoSi){
+        ativoSi = false
+    } else {
+        ativoSi = true
+
+    }
+   }
+   function ativarDoSus(){
+    const tecla = document.querySelector('#dóSustenido');
+    tecla.classList.toggle('ativo');
+    if(ativoDoSustenido){
+        ativoDoSustenido = false
+    } else {
+        ativoDoSustenido = true
+
+    }
+   }
+   function ativarReSus(){
+    const tecla = document.querySelector('#réSustenido');
+    tecla.classList.toggle('ativo');
+    if(ativoReSustenido){
+        ativoReSustenido = false
+    } else {
+        ativoReSustenido = true
+
+    }
+   }
+   function ativarFaSus(){
+    const tecla = document.querySelector('#faSustenido');
+    tecla.classList.toggle('ativo');
+    if(ativoFaSustenido){
+        ativoFaSustenido = false
+    } else {
+        ativoFaSustenido = true
+
+    }
+   }
+   function ativarSolSus(){
+    const tecla = document.querySelector('#solSustenido');
+    tecla.classList.toggle('ativo');
+    if(ativoSolSustenido){
+        ativoSolSustenido = false
+    } else {
+        ativoSolSustenido = true
+
+    }
+   }
+   function ativarLaSus(){
+    const tecla = document.querySelector('#laSustenido');
+    tecla.classList.toggle('ativo');
+    if(ativoLaSustenido){
+        ativoLaSustenido = false
+    } else {
+        ativoLaSustenido = true
+
+    }
+   }
+</script>
