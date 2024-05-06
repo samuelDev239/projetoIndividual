@@ -37,6 +37,15 @@
 .div.one {
 
 }
-.tecla.ativo {
-    background-color: #41c71f;
+.tecla.ativoUm {
+    background-color: #7fe765;
+}
+.tecla.ativoDois {
+    background-color: #ffed88;
+}
+.tecla.ativoTres {
+    background-color: #eb2525;
+}
+.tecla.ativoQuatro {
+    background-color: #21dde4;
 }
