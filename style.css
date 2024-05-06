@@ -1,5 +1,7 @@
+
 .container {
     display: flex;
+    gap: 1.2px;
 
     
 }
@@ -7,6 +9,7 @@
     width: 50px;
     height: 200px;
     border: 1px solid black;
+    border-radius: 3px;
 
 }
 .tecla.sus {
@@ -26,7 +29,7 @@
     display: flex;
     position: absolute;
     left: 30px;
-    top: 10px;
+    top: 8px;
     gap: 3.5rem;
 }
 .div {
@@ -37,15 +40,9 @@
 .div.one {
 
 }
-.tecla.ativoUm {
-    background-color: #7fe765;
+.tecla.ativo {
+    background-color: #97eaff;
 }
 .tecla.ativoDois {
-    background-color: #ffed88;
-}
-.tecla.ativoTres {
-    background-color: #eb2525;
-}
-.tecla.ativoQuatro {
-    background-color: #21dde4;
+    background-color: #1ea1c2;
 }

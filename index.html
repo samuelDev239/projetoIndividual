@@ -36,6 +36,9 @@
 
     </div>
     <button onclick="analisarEscala()">ver</button>
+    <button onclick="analisarAcordesMaiores()">acordes maiores</button>
+    <button onclick="analisarEscala()">ver</button>
+    <button onclick="analisarEscala()">ver</button>
     
 </body>
 </html>
@@ -54,7 +57,7 @@
     var ativoSi = false
    function ativarDo(){
     const tecla = document.querySelector('#dó');
-    tecla.classList.toggle('ativoUm');
+    tecla.classList.toggle('ativo');
     if(ativoDo){
         ativoDo = false
     } else {
@@ -64,7 +67,7 @@
    }
    function ativarRe(){
     const tecla = document.querySelector('#ré');
-    tecla.classList.toggle('ativoTres');
+    tecla.classList.toggle('ativo');
     if(ativoRe){
         ativoRe = false
     } else {
@@ -74,7 +77,7 @@
    }
    function ativarMi(){
     const tecla = document.querySelector('#mi');
-    tecla.classList.toggle('ativoUm');
+    tecla.classList.toggle('ativo');
     if(ativoMi){
         ativoMi = false
     } else {
@@ -84,7 +87,7 @@
    }
    function ativarFa(){
     const tecla = document.querySelector('#fa');
-    tecla.classList.toggle('ativoDois');
+    tecla.classList.toggle('ativo');
     if(ativoFa){
         ativoFa = false
     } else {
@@ -94,7 +97,7 @@
    }
    function ativarSol(){
     const tecla = document.querySelector('#sol');
-    tecla.classList.toggle('ativoQuatro');
+    tecla.classList.toggle('ativo');
     if(ativoSol){
         ativoSol = false
     } else {
@@ -104,7 +107,7 @@
    }
    function ativarLa(){
     const tecla = document.querySelector('#la');
-    tecla.classList.toggle('ativoDois');
+    tecla.classList.toggle('ativo');
     if(ativoLa){
         ativoLa = false
     } else {
@@ -114,7 +117,7 @@
    }
    function ativarSi(){
     const tecla = document.querySelector('#si');
-    tecla.classList.toggle('ativoQuatro');
+    tecla.classList.toggle('ativo');
     if(ativoSi){
         ativoSi = false
     } else {
@@ -134,7 +137,7 @@
    }
    function ativarReSus(){
     const tecla = document.querySelector('#réSustenido');
-    tecla.classList.toggle('ativoQuatro');
+    tecla.classList.toggle('ativoDois');
     if(ativoReSus){
         ativoReSus = false
     } else {
@@ -144,7 +147,7 @@
    }
    function ativarFaSus(){
     const tecla = document.querySelector('#faSustenido');
-    tecla.classList.toggle('ativoTres');
+    tecla.classList.toggle('ativoDois');
     if(ativoFaSus){
         ativoFaSus = false
     } else {
@@ -154,7 +157,7 @@
    }
    function ativarSolSus(){
     const tecla = document.querySelector('#solSustenido');
-    tecla.classList.toggle('ativoUm');
+    tecla.classList.toggle('ativoDois');
     if(ativoSolSus){
         ativoSolSus = false
     } else {
@@ -164,7 +167,7 @@
    }
    function ativarLaSus(){
     const tecla = document.querySelector('#laSustenido');
-    tecla.classList.toggle('ativoTres');
+    tecla.classList.toggle('ativoDois');
     if(ativoLaSus){
         ativoLaSus = false
     } else {
@@ -173,41 +176,83 @@
     }
    }
 
+   function analisarAcordesMaiores(){
+   
+     if(ativoDo == true && ativoDoSus  == false && ativoRe  == false && ativoReSus  == false && ativoMi  == true && ativoFa  == false && ativoFaSus == false && ativoSol == true && ativoSolSus == false && ativoLa == false && ativoLaSus == false && ativoSi == false ) {
+        mensagem.innerHTML = `acorde maior de dó`
+    } 
+    else if(ativoDo == false && ativoDoSus  == true && ativoRe  == false && ativoReSus  == false && ativoMi  == false && ativoFa  == true && ativoFaSus == false && ativoSol == false && ativoSolSus == true && ativoLa == false && ativoLaSus == false && ativoSi == false ) {
+        mensagem.innerHTML = `acorde maior de dó sustenido`
+    } 
+    else if(ativoDo == false && ativoDoSus  == false && ativoRe  == true && ativoReSus  == false && ativoMi  == false && ativoFa  == false && ativoFaSus == true && ativoSol == false && ativoSolSus == false && ativoLa == true && ativoLaSus == false && ativoSi == false ) {
+        mensagem.innerHTML = `acorde maior de ré`
+    } 
+    else if(ativoDo == false && ativoDoSus  == false && ativoRe  == false && ativoReSus  == false && ativoMi  == true && ativoFa  == false && ativoFaSus == false && ativoSol == false && ativoSolSus == true && ativoLa == false && ativoLaSus == false && ativoSi == true ) {
+        mensagem.innerHTML = `acorde maior de mi`
+    } 
+    else if(ativoDo == true && ativoDoSus  == false && ativoRe  == false && ativoReSus  == false && ativoMi  == false && ativoFa  == true && ativoFaSus == false && ativoSol == false && ativoSolSus == false && ativoLa == true && ativoLaSus == false && ativoSi == false ) {
+        mensagem.innerHTML = `acorde maior de fá`
+    } 
+    else if(ativoDo == false && ativoDoSus  == true && ativoRe  == false && ativoReSus  == false && ativoMi  == false && ativoFa  == false && ativoFaSus == true && ativoSol == false && ativoSolSus == false && ativoLa == false && ativoLaSus == true && ativoSi == false ) {
+        mensagem.innerHTML = `acorde maior de fá sustenido`
+    } 
+    else if(ativoDo == false && ativoDoSus  == false && ativoRe  == true && ativoReSus  == false && ativoMi  == false && ativoFa  == false && ativoFaSus == false && ativoSol == true && ativoSolSus == false && ativoLa == false && ativoLaSus == false && ativoSi == true ) {
+        mensagem.innerHTML = `acorde maior de sol`
+    } 
+    else if(ativoDo == true && ativoDoSus  == false && ativoRe  == false && ativoReSus  == true && ativoMi  == false && ativoFa  == false && ativoFaSus == false && ativoSol == false && ativoSolSus == true && ativoLa == false && ativoLaSus == false && ativoSi == false ) {
+        mensagem.innerHTML = `acorde maior de sol sustenido`
+    } 
+    else if(ativoDo == false && ativoDoSus  == true && ativoRe  == false && ativoReSus  == false && ativoMi  == true && ativoFa  == false && ativoFaSus == false && ativoSol == false && ativoSolSus == false && ativoLa == true && ativoLaSus == false && ativoSi == false ) {
+        mensagem.innerHTML = `acorde maior de lá`
+    } 
+    else if(ativoDo == false && ativoDoSus  == false && ativoRe  == true && ativoReSus  == false && ativoMi  == false && ativoFa  == true && ativoFaSus == false && ativoSol == false && ativoSolSus == false && ativoLa == false && ativoLaSus == true && ativoSi == false ) {
+        mensagem.innerHTML = `acorde maior de lá sustenido`
+    } 
+    else if(ativoDo == false && ativoDoSus  == false && ativoRe  == false && ativoReSus  == true && ativoMi  == false && ativoFa  == false && ativoFaSus == true && ativoSol == false && ativoSolSus == false && ativoLa == false && ativoLaSus == false && ativoSi == true ) {
+        mensagem.innerHTML = `acorde maior de si`
+    } 
+    else if(ativoDo == false && ativoDoSus  == false && ativoRe  == false && ativoReSus  == true && ativoMi  == false && ativoFa  == false && ativoFaSus == false && ativoSol == true && ativoSolSus == false && ativoLa == false && ativoLaSus == true && ativoSi == false ) {
+        mensagem.innerHTML = `acorde maior de ré sustenido`
+    } 
+     
+    
+   }
+
    function analisarEscala(){
-    if(ativoDo == true && ativoRe  == true && ativoMi  == true && ativoFa  == true && ativoSol  == true && ativoSi  == true ) {
+    if(ativoDo == true && ativoRe  == true && ativoMi  == true && ativoFa  == true && ativoSol  == true && ativoSi  == true && ativoDoSus == false && ativoReSus == false && ativoFaSus == false && ativoSolSus == false && ativoLaSus == false) {
         mensagem.innerHTML = `escala de dó`
     } 
-    else if(ativoDoSus  == true && ativoReSus  == true && ativoFa  == true && ativoFaSus  == true && ativoSolSus  == true && ativoLaSus  == true && ativoDo  == true) {
+    else if(ativoDoSus  == true && ativoReSus  == true && ativoFa  == true && ativoFaSus  == true && ativoSolSus  == true && ativoLaSus  == true && ativoDo  == true && ativoRe == false && ativoMi == false && ativoSol == false && ativoLa == false && ativoSi == false) {
         mensagem.innerHTML = `escala de dó sustenido`
     } 
-    else if(ativoRe  == true && ativoMi  == true && ativoFaSus  == true && ativoSol  == true && ativoLa  == true && ativoSi  == true && ativoDoSus  == true) {
+    else if(ativoRe  == true && ativoMi  == true && ativoFaSus  == true && ativoSol  == true && ativoLa  == true && ativoSi  == true && ativoDoSus  == true && ativoDo == false && ativoFa == false && ativoReSus == false && ativoSolSus == false && ativoLaSus == false) {
         mensagem.innerHTML = `escala de ré`
     } 
-    else if(ativoReSus  == true && ativoFa  == true && ativoSol  == true && ativoSolSus  == true && ativoLaSus  == true && ativoDo  == true && ativoRe  == true) {
+    else if(ativoReSus  == true && ativoFa  == true && ativoSol  == true && ativoSolSus  == true && ativoLaSus  == true && ativoDo  == true && ativoRe  == true && ativoFaSus == false && ativoSi == false && ativoLa == false && ativoDoSus == false && ativoMi == false) {
         mensagem.innerHTML = `escala de ré sustenido`
     } 
-    else if(ativoMi  == true && ativoFaSus  == true && ativoSolSus  == true && ativoLa  == true && ativoSi  == true && ativoDoSus  == true && ativoReSus  == true) {
+    else if(ativoMi  == true && ativoFaSus  == true && ativoSolSus  == true && ativoLa  == true && ativoSi  == true && ativoDoSus  == true && ativoReSus  == true && ativoRe == false && ativoDo == false && ativoSol == false && ativoLaSus == false && ativoFa == false)  {
         mensagem.innerHTML = `escala de mi`
     } 
-    else if(ativoFa  == true && ativoSol  == true && ativoLa  == true && ativoLaSus  == true && ativoDo  == true && ativoRe  == true && ativoMi  == true) {
+    else if(ativoFa  == true && ativoSol  == true && ativoLa  == true && ativoLaSus  == true && ativoDo  == true && ativoRe  == true && ativoMi  == true && ativoFaSus == false && ativoReSus == false && ativoSolSus == false && ativoDoSus == false && ativoSi == false) {
         mensagem.innerHTML = `escala de Fa`
     } 
-    else if(ativoFaSus  == true && ativoSolSus  == true && ativoLaSus  == true && ativoSi  == true && ativoDoSus  == true && ativoReSus  == true && ativoFa  == true) {
+    else if(ativoFaSus  == true && ativoSolSus  == true && ativoLaSus  == true && ativoSi  == true && ativoDoSus  == true && ativoReSus  == true && ativoFa  == true && ativoMi == false && ativoRe == false && ativoDo == false && ativoSol == false && ativoLa == false) {
         mensagem.innerHTML = `escala de Fa sustenido`
     } 
-    else if(ativoSol  == true && ativoLa  == true && ativoSi  == true && ativoDo  == true && ativoRe  == true && ativoMi  == true && ativoFaSus  == true) {
+    else if(ativoSol  == true && ativoLa  == true && ativoSi  == true && ativoDo  == true && ativoRe  == true && ativoMi  == true && ativoFaSus  == true && ativoFa == false && ativoReSus == false && ativoSolSus == false && ativoLaSus == false && ativoDoSus == false) {
         mensagem.innerHTML = `escala de sol`
     }
-    else if(ativoSolSus  == true && ativoLaSus  == true && ativoDo  == true && ativoDoSus  == true && ativoReSus  == true && ativoFa  == true && ativoSol  == true) {
+    else if(ativoSolSus  == true && ativoLaSus  == true && ativoDo  == true && ativoDoSus  == true && ativoReSus  == true && ativoFa  == true && ativoSol  == true && ativoFaSus == false && ativoMi == false && ativoLa == false && ativoSi == false && ativoRe == false) {
         mensagem.innerHTML = `escala de sol sustenido`
     }
-    else if(ativoLa  == true && ativoSi  == true && ativoDoSus  == true && ativoRe  == true && ativoMi  == true && ativoFaSus  == true && ativoSolSus  == true) {
+    else if(ativoLa  == true && ativoSi  == true && ativoDoSus  == true && ativoRe  == true && ativoMi  == true && ativoFaSus  == true && ativoSolSus  == true && ativoSol == false && ativoFa == false && ativoReSus == false && ativoDo == false && ativoLaSus == false) {
         mensagem.innerHTML = `escala de Lá`
     } 
-    else if(ativoLaSus  == true && ativoDo  == true && ativoRe  == true && ativoReSus  == true && ativoFa  == true && ativoSol  == true && ativoLa  == true) {
+    else if(ativoLaSus  == true && ativoDo  == true && ativoRe  == true && ativoReSus  == true && ativoFa  == true && ativoSol  == true && ativoLa  == true && ativoSolSus == false && ativoFaSus == false && ativoMi == false && ativoSi == false && ativoDoSus == false) {
         mensagem.innerHTML = `escala de Lá sustenido`
     }
-    else if(ativoSi  == true && ativoDoSus  == true && ativoReSus  == true && ativoMi  == true && ativoFaSus  == true && ativoSolSus  == true && ativoLaSus  == true) {
+    else if(ativoSi  == true && ativoDoSus  == true && ativoReSus  == true && ativoMi  == true && ativoFaSus  == true && ativoSolSus  == true && ativoLaSus  == true && ativoLa == false && ativoSol == false && ativoFa == false&& ativoDo == false && ativoRe == false) {
         mensagem.innerHTML = `escala de Si`
     } else {
         mensagem.innerHTML = `escala invalida, lembre-se que umas escala tem 7 notas`
