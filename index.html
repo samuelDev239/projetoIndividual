@@ -26,6 +26,7 @@
         <div class="tecla sus" id="solSustenido"  onclick="ativarSolSus()"></div>
         <div class="tecla sus" id="laSustenido"  onclick="ativarLaSus()"></div>
     </div>
+    <div id="mensagem"></div>
 
 
 
@@ -34,22 +35,22 @@
 
 
     </div>
-    <button>ver</button>
+    <button onclick="analisarEscala()">ver</button>
     
 </body>
 </html>
 <script>
     var ativoDo = false
-    var ativoDoSustenido = false
+    var ativoDoSus = false
     var ativoRe = false
-    var ativoReSustenido = false
+    var ativoReSus = false
     var ativoMi = false
     var ativoFa = false
-    var ativoFaSustenido = false
+    var ativoFaSus = false
     var ativoSol = false
-    var ativoSolSustenido = false
+    var ativoSolSus = false
     var ativoLa = false
-    var ativoLaSustenido = false
+    var ativoLaSus = false
     var ativoSi = false
    function ativarDo(){
     const tecla = document.querySelector('#dó');
@@ -124,51 +125,92 @@
    function ativarDoSus(){
     const tecla = document.querySelector('#dóSustenido');
     tecla.classList.toggle('ativo');
-    if(ativoDoSustenido){
-        ativoDoSustenido = false
+    if(ativoDoSus){
+        ativoDoSus = false
     } else {
-        ativoDoSustenido = true
+        ativoDoSus = true
 
     }
    }
    function ativarReSus(){
     const tecla = document.querySelector('#réSustenido');
     tecla.classList.toggle('ativo');
-    if(ativoReSustenido){
-        ativoReSustenido = false
+    if(ativoReSus){
+        ativoReSus = false
     } else {
-        ativoReSustenido = true
+        ativoReSus = true
 
     }
    }
    function ativarFaSus(){
     const tecla = document.querySelector('#faSustenido');
     tecla.classList.toggle('ativo');
-    if(ativoFaSustenido){
-        ativoFaSustenido = false
+    if(ativoFaSus){
+        ativoFaSus = false
     } else {
-        ativoFaSustenido = true
+        ativoFaSus = true
 
     }
    }
    function ativarSolSus(){
     const tecla = document.querySelector('#solSustenido');
     tecla.classList.toggle('ativo');
-    if(ativoSolSustenido){
-        ativoSolSustenido = false
+    if(ativoSolSus){
+        ativoSolSus = false
     } else {
-        ativoSolSustenido = true
+        ativoSolSus = true
 
     }
    }
    function ativarLaSus(){
     const tecla = document.querySelector('#laSustenido');
     tecla.classList.toggle('ativo');
-    if(ativoLaSustenido){
-        ativoLaSustenido = false
+    if(ativoLaSus){
+        ativoLaSus = false
     } else {
-        ativoLaSustenido = true
+        ativoLaSus = true
 
+    }
+   }
+
+   function analisarEscala(){
+    if(ativoDo == true && ativoRe  == true && ativoMi  == true && ativoFa  == true && ativoSol  == true && ativoSi  == true ) {
+        mensagem.innerHTML = `escala de dó`
+    } 
+    else if(ativoDoSus  == true && ativoReSus  == true && ativoFa  == true && ativoFaSus  == true && ativoSolSus  == true && ativoLaSus  == true && ativoDo  == true) {
+        mensagem.innerHTML = `escala de dó sustenido`
+    } 
+    else if(ativoRe  == true && ativoMi  == true && ativoFaSus  == true && ativoSol  == true && ativoLa  == true && ativoSi  == true && ativoDoSus  == true) {
+        mensagem.innerHTML = `escala de ré`
+    } 
+    else if(ativoReSus  == true && ativoFa  == true && ativoSol  == true && ativoSolSus  == true && ativoLaSus  == true && ativoDo  == true && ativoRe  == true) {
+        mensagem.innerHTML = `escala de ré sustenido`
+    } 
+    else if(ativoMi  == true && ativoFaSus  == true && ativoSolSus  == true && ativoLa  == true && ativoSi  == true && ativoDoSus  == true && ativoReSus  == true) {
+        mensagem.innerHTML = `escala de mi`
+    } 
+    else if(ativoFa  == true && ativoSol  == true && ativoLa  == true && ativoLaSus  == true && ativoDo  == true && ativoRe  == true && ativoMi  == true) {
+        mensagem.innerHTML = `escala de Fa`
+    } 
+    else if(ativoFaSus  == true && ativoSolSus  == true && ativoLaSus  == true && ativoSi  == true && ativoDoSus  == true && ativoReSus  == true && ativoFa  == true) {
+        mensagem.innerHTML = `escala de Fa sustenido`
+    } 
+    else if(ativoSol  == true && ativoLa  == true && ativoSi  == true && ativoDo  == true && ativoRe  == true && ativoMi  == true && ativoFaSus  == true) {
+        mensagem.innerHTML = `escala de sol`
+    }
+    else if(ativoSolSus  == true && ativoLaSus  == true && ativoDo  == true && ativoDoSus  == true && ativoReSus  == true && ativoFa  == true && ativoSol  == true) {
+        mensagem.innerHTML = `escala de sol sustenido`
+    }
+    else if(ativoLa  == true && ativoSi  == true && ativoDoSus  == true && ativoRe  == true && ativoMi  == true && ativoFaSus  == true && ativoSolSus  == true) {
+        mensagem.innerHTML = `escala de Lá`
+    } 
+    else if(ativoLaSus  == true && ativoDo  == true && ativoRe  == true && ativoReSus  == true && ativoFa  == true && ativoSol  == true && ativoLa  == true) {
+        mensagem.innerHTML = `escala de Lá sustenido`
+    }
+    else if(ativoSi  == true && ativoDoSus  == true && ativoReSus  == true && ativoMi  == true && ativoFaSus  == true && ativoSolSus  == true && ativoLaSus  == true) {
+        mensagem.innerHTML = `escala de Si`
+    } else {
+        mensagem.innerHTML = `escala invalida, lembre-se que umas escala tem 7 notas`
     }
    }
 </script>
