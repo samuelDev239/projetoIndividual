@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.titulo {
+
+    font-family: "Vampiro One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #000;
+    font-size: 150px;
+    height: 150px;
+
+
+}
+.alt {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container {
+    display: flex;
+    gap: 1.2px;
+    display: flex;
+    transform: rotate(90deg);
+    position: absolute;
+    right: 0px;
+    top: 25vh;
+
+    
+}
+.tecla {
+    width: 65px;
+    height: 225px;
+    border: 1px solid black;
+    border-radius: 3px;
+    transition: 0.5s;
+
+}
+.tecla:hover{
+    background-color: #E8C409;
+    
+
+}
+.tecla.sus:hover{
+    background-color: #E8C409;
+}
+.tecla.sus {
+    width: 50px;
+    height: 120.5px;
+    background-color: #1d1d1d;
+    border-radius: 1px solid black;
+    transition: 0.5s;
+
+}
+.tecla.sus.ativo {
+    width: 40px;
+    height: 100px;
+    background-color: #41c71f;
+
+}
+.sustenidos {
+    display: flex;
+    position: absolute;
+    top: 8px;
+    gap: 5rem;
+    transform: rotate(90deg);
+    position: absolute;
+    right: 75px;
+    top: 200px;
+    z-index: 1000;
+}
+.div {
+    width: auto;
+    display: flex;
+    gap: 1.2rem;
+}
+.tecla.ativo {
+    background-color: #97eaff;
+}
+.tecla.ativoDois {
+    background-color: #1ea1c2;
+}
+
+
+.subtitulo {
+
+    font-family: "Mirza", serif;
+    font-weight: 500;
+    font-size: 80px;
+    font-style: normal;
+
+
+}
+
+.btn {
+    width: 320px;
+    padding: 8px;
+    height: auto;
+    border-radius: 10px;
+    display: flex;
+    font-size: 70px;
+    align-items: center;
+    font-weight: 800;
+    justify-content: center;
+    background-color: #E8C409;
+ 
+
+
+}
+
+.sec {
+    width: calc(100vw - 24rem);
+    height: 100vh;
+    padding: 0rem 12rem;
+}
+
+.textos {
+    width: 50%;
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lateralNav {
+    position: fixed;
+    width: 60px;
+    height: 85vh;
+    background-color: #1d1d1d;
+    border-radius: 5px;
+    top: 25px;
+    left: 50px;
+}
