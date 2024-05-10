@@ -13,7 +13,7 @@
 <body>
     <div class="fater">
     <section class="sec one">
-        <nav class="lateralNav"></nav>
+        <nav id="nav" class="lateralNav"><div  onclick="modalNav()" class="hamburger"></div></nav>
         <div class="container">
             <div class="tecla" id="dó"  onclick="ativarDo()"></div>
             <div class="tecla" id="ré" onclick="ativarRe()"></div>
@@ -47,11 +47,11 @@
     </div>
 
         <div class="btn">
-            <p class="alt">TESTAR AGORA</p>
+            <p class="alt"> <a href="#dois"></a> TESTAR AGORA</p>
         </div>
     </div>
     </section>
-    <section class="sec two"> 
+    <section class="sec two" id="dois"> 
         <p class="titulo">Beneficios</p>
         <p class="subtitulo">Da musica</p>
         <div class="alignCircle">
@@ -74,7 +74,12 @@
 
     </div></section>
     <section class="sec tree">
-        <div class="fundoCad"></div>
+        <!-- <div class="fundoCad">
+         
+             
+              
+        </div> -->
+     
         <div class="contCad">
             <div class="teclasCad"> <input type="text" class="inputTecla" placeholder="Nome"> </div>
             
@@ -82,7 +87,7 @@
             
             <div class="teclasCad"> <input type="text" class="inputTecla" placeholder="Senha"> </div>
             
-            <div class="teclasCad"> <button class="buttonCad"> <p class="alt" style="color: white; font-size: 100px;">Cadastrar</p></button> </div>
+            <div class="teclasCad"> <button class="buttonCad"> <p class="alt" style="color: white; font-size: 70px;">Cadastrar</p></button> </div>
             
             <div class="teclasCad">
                 
@@ -90,8 +95,101 @@
            
         </div>
     </section>
-    <section class="sec four"></section>
+    <section class="sec four">
+        <div class="vinheta"></div>
+
+        <div class="grid-containerPai" >
+        <div class="grid-container altUm">
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Mi</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Lá</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Mi</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Lá</p></div>
+        </div>
+        <div class="grid-container altDois">
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Fá</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Mi</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Lá</p></div>
+        </div>
+        <div class="grid-container altTres">
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>  
+        </div>
+        <div class="grid-container altUm">
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Mi</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Lá</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Mi</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Lá</p></div>
+        </div>
+        <div class="grid-container altDois">
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Fá</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Si</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Lá</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Mi</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Lá</p></div>
+        </div>
+        <div class="grid-container altTres">
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>  
+        </div>
+        <div class="grid-container altUm">
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Mi</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Lá</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Mi</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Lá</p></div>
+        </div>
+        <div class="grid-container altDois">
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Mi</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Lá</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Fá</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Lá</p></div>
+        </div>
+        <div class="grid-container altTres">
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Dó</p></div>
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>  
+            <div class="grid-item"><span style="color: #fff;"><p>#</p></span><p style="color: #fff;"> Sol</p></div>  
+        </div>
+    </div>
+         
+          
+    
+    </section>
 </div>
     
 </body>
 </html>
+<script>
+    function modalNav(){
+      nav =  document.getElementById('nav')
+
+        nav.classList.toggle('ativo')
+    }
+</script>
