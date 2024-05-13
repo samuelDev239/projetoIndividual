@@ -2,13 +2,69 @@
     margin: 0;
     padding: 0;
 }
-.fater {
+html {
+    scroll-snap-type: x mandatory;
+    scrollbar-width: 10px;
+
+
+
+}
+
+body {
     display: flex;
     flex-direction: row;
     overflow-y: hidden;
-    width: calc((100vw )* 4);
+    scrollbar-color: #3498db;
+
+    width: calc(100vw * 4 );
+    scroll-snap-type: x mandatory;
+  }
+
+@keyframes randomUm {
+    0% {}
+    50% {
+        transform: translate(100px, 200px);
+    }
+    100% {
+        transform: translate(300px, 300px);
+    }
     
 }
+@keyframes randomDois {
+    0% {}
+    50% {
+        transform: translate(200px, 300px);
+    }
+    100% {
+        transform: translate(300px, -100px);
+    }
+    
+}
+@keyframes randomTres {
+    0% {}
+    50% {
+        transform: translate(50px, -100px);
+    }
+    100% {
+        transform: translate(200px, -200px);
+    }
+    
+}
+@keyframes loading-wave-animation {
+    0% {
+      height: 10px;
+    }
+  
+    50% {
+      height: 50px;
+    }
+  
+    100% {
+      height: 10px;
+    }
+  }
+
+  
 @keyframes musicaDo {
 
     to {
@@ -17,7 +73,7 @@
 
    from {
 
-        background-color: #E8C409;
+        background-color: #3498db;
         height: 230px;
         
     }
@@ -67,13 +123,24 @@
 
    from {
     transform: translateY(30px);
-    background-color: #E8C409;
+    background-color: #3498db;
 
     }
    
 
 
 }
+
+@keyframes matrix {
+    0% {
+      background-position: 0% 100%, 50% 100%, 100% 100%
+    }
+  
+    100% {
+      background-position: 0% 0%, 50% 0%, 100% 0%
+    }
+  }
+      
 @keyframes fundo {
 
     0%{ background-position: 0% 0%;
@@ -82,7 +149,7 @@
 
   
    100% {
-    background-position: 0% 200%;
+    background-position: 200% 0%;
     }
    
 
@@ -118,7 +185,7 @@ p {
     transform: rotate(90deg);
     position: absolute;
     right: 0px;
-    top: 25vh;
+
 
     
 }
@@ -132,12 +199,12 @@ p {
 
 }
 .tecla:hover{
-    background-color: #E8C409;
+    background-color: #3498db;
     
 
 }
 .tecla.sus:hover{
-    background-color: #E8C409;
+    background-color: #3498db;
 }
 .tecla.sus {
     width: 50px;
@@ -161,7 +228,7 @@ p {
     transform: rotate(90deg);
     position: absolute;
     right: -16px;
-    top: 200px;
+    top: 250px;
     z-index: 1000;
 }
 .div {
@@ -197,7 +264,7 @@ p {
     align-items: center;
     font-weight: 800;
     justify-content: center;
-    background-color: #E8C409;
+    background-color: #3498db;
  
 
 
@@ -207,7 +274,11 @@ p {
     width: calc(100vw);
     height: 95vh;
     padding: 0rem;
+    scroll-snap-align: start;
+    background-color: #ededed;
+
 }
+
 
 .textos {
     width: 50%;
@@ -220,6 +291,12 @@ p {
     gap: 1rem;
     padding: 0 12rem;
    
+}
+.invisible {
+    display: none;
+}
+.contCad.invisible {
+    display: none;
 }
 
 .lateralNav {
@@ -250,6 +327,8 @@ p {
     display: flex;
     align-items: center;
     flex-direction: row;
+
+
     }
 
     #dó {
@@ -292,6 +371,7 @@ p {
         align-items: center;
         justify-content: center;
         flex-direction: column;
+   
     
     }
 
@@ -300,16 +380,17 @@ p {
         display: flex;
         justify-content: center;
         align-items: start;
-        justify-content: start;
+        justify-content: end;
+
     }
     .teclasCad {
         width: 100%;
         height: calc(100% / 4);
-        border: 1px solid black;
+        box-shadow: 2px 8px 1px rgba(0, 0, 0, 0.246);
     }
     .inputTecla {
         height: 100px;
-        width: 60%;
+        width: calc(500px - 2rem);
         background-color: #1d1d1d;
         border: none;
         color: #fff;
@@ -318,7 +399,19 @@ p {
         top: 50px;
         padding-left: 2rem;
         border-radius: 0px 10px 10px 0px;
+        box-shadow: 0px 14px 0px rgb(16 16 16);
+        transition: 0.5s;
+
        
+    }
+    .inputTecla.cad {
+        top: 100px;
+    }
+    .inputTecla:focus {
+        box-shadow: none;
+        margin-top: 14px;
+        outline: none;
+
     }
     .inputTecla.one {
         position: absolute;
@@ -326,18 +419,34 @@ p {
     }
 
     .contCad {
-        width: 60%;
-        background-color: #ffffff;
-        height: 100%;
+        width: 70%;
+        background-color: #ededed;
+        height: 100vh;
         display: flex;
         flex-direction: column;
+        position: relative;
+        z-index: 50;
         
     }
+    .contLog {
+        width: 70%;
+        background-color: #ededed;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 50;
+        
+    }
+    .contLog.invisible {
+        display: none;
+    }
+
     .circulo {
         width: 100px;
         height: 100px;
         border-radius: 100px;
-        background-color: #ffe815;
+        background-color: #009dff;
         animation: jump 1s  infinite ;
         animation-direction: alternate;
     }
@@ -357,16 +466,23 @@ p {
         align-items: center;
     }
     .buttonCad {
-        width: 65%;
+        width: 500px;
         border-radius: 0px 10px 10px 0px;
         display: flex;
         align-items: center;
         justify-content: center;
         background-color: #1d1d1d;
-        height: 100%;
+        height: 100px;
         position: relative;
-        top: 100%;
+        top: 65%;
         border: none;
+        box-shadow: 0px 14px 0px rgb(16 16 16);
+        transition: 0.5s;
+    }
+    .buttonCad:focus {
+        box-shadow: none;
+        margin-top: 14px;
+
     }
 
     .fundoCad {
@@ -376,6 +492,7 @@ p {
         background-size: 100%;
         background-repeat: repeat-y;
         animation: fundo 10s infinite  alternate ;
+        z-index: 10;
     }
     .hamburger {
         border-top: 0.125rem solid;
@@ -397,7 +514,6 @@ p {
     
       .lateralNav.ativo .hamburger {
         border-top-color: transparent;
-        background: red;
         z-index: 8;
         cursor: pointer;
       }
@@ -430,11 +546,13 @@ p {
     border-radius: 10px;
     z-index: 5;
     transition: 0.5s;
+    cursor: pointer;
 
 
 }
 .grid-item:hover {
-    background-color: #E8C409;
+    background-color: #3498db;
+    font-size: 22px;
     color: #1d1d1d;
 }
 .grid-container.altUm{
@@ -468,12 +586,53 @@ p {
     justify-content: center;
     background-color: white;
     overflow-x: hidden;
-    width: 100%;
+    width: 40%;
     height: 100%;
+    opacity: 80%;
     
     z-index: 4;
     
 }
+.fundo {
+    width: 45%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4rem;
+    gap: 4px;
+    justify-content: start;
+
+}
+.loading-wave {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  
+  .loading-bar {
+    width: 20px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #3498db;
+    border-radius: 5px;
+    animation: loading-wave-animation 1s ease-in-out infinite;
+  }
+  
+  .loading-bar:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  
+  .loading-bar:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  
+  .loading-bar:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  
 /* .vinheta {
     position: absolute;
     top: 0;
@@ -483,3 +642,115 @@ p {
     z-index: 50;
  
 } */
+
+.navigation {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.bar {
+    width: 70px;
+    height: 20px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px ;
+    cursor: pointer;
+}
+
+.botaoLogin {
+    width: 250px;
+    height: 75px;
+    border-radius: 100px;
+    /* background-color: #3498db; */
+    border: 4px solid #3498db;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: "Bebas Neue", sans-serif !important;
+    transition: 0.5s ease;
+
+}
+.botaoLogin:hover {
+    background-color: #3498db;
+   
+}
+.botaoLogin:hover p {
+  
+    color: #fff;
+   
+}
+.botaoLogin p{
+ font-family: "Bebas Neue", sans-serif !important;
+ transition: 0.5;
+ letter-spacing: 2px;
+ color: #1d1d1d;
+}
+.cicle {
+
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    border-radius: 100px;
+    position: absolute;
+    animation: randomUm 15s infinite alternate;
+    transform: translate(300px);
+}
+.cicle.umC {
+    width: 150px;
+    height: 150px;
+    animation: randomDois 15s infinite alternate;
+    transform: translate(-100px);
+
+}
+.contCadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 50;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    background-color: #ffffff80;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    backdrop-filter: blur(10px);
+}
+.contCadastro.invisible {
+    display: none;
+}
+.contLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 50;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    background-color: #ffffff80;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    backdrop-filter: blur(10px);
+}
+.contLogin.invisible {
+    display: none;
+}
+.cicle.doisC {
+    width: 180px;
+    height: 180px;
+    transform: translate(-200px, 350px);
+    animation: none;
+    animation: randomTres 15s infinite alternate;
+} 
