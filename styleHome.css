@@ -8,6 +8,7 @@ html {
 
 
 
+
 }
 
 body {
@@ -185,6 +186,7 @@ p {
     transform: rotate(90deg);
     position: absolute;
     right: 0px;
+    
 
 
     
@@ -228,7 +230,7 @@ p {
     transform: rotate(90deg);
     position: absolute;
     right: -16px;
-    top: 250px;
+    top: 40%;
     z-index: 1000;
 }
 .div {
@@ -277,6 +279,11 @@ p {
     scroll-snap-align: start;
     background-color: #ededed;
 
+}
+.sec.four {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
 }
 
 
@@ -449,12 +456,20 @@ p {
         background-color: #009dff;
         animation: jump 1s  infinite ;
         animation-direction: alternate;
+        transition: 1s;
+        position: absolute;
+        bottom: 4rem;
+        cursor: pointer;
+
+
     }
     .alignCircle {
         display: flex;
         justify-content: space-around;
         align-items: center;
         width: 80%;
+        position: absolute;
+        bottom: 4rem;
         
 
     }
@@ -701,6 +716,31 @@ p {
     position: absolute;
     animation: randomUm 15s infinite alternate;
     transform: translate(300px);
+   
+}
+.textoAbsolute {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 5rem;
+    transition: 1.5s;
+}
+.textoAbsolute.ativo {
+    top: 1.5rem;
+}
+.circulo.cardCircle{
+    width: 250px;
+    border-radius: 10px;
+    height: 200px;
+    transition: 1s;
+    position: absolute;
+    transform: matrix3d(50px);
+    
+}
+.circulo.circulo.cardCircle:hover {
+    
 }
 .cicle.umC {
     width: 150px;
@@ -754,3 +794,22 @@ p {
     animation: none;
     animation: randomTres 15s infinite alternate;
 } 
+.metade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(50% - 2rem);
+    height: 100%;
+    flex-direction: column;
+    padding: 2rem;
+
+}
+.metadeDois {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    background-color: #1d1d1d;
+
+}

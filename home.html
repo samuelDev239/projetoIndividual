@@ -54,30 +54,32 @@
     </div>
     </section>
     <section class="sec two" id="dois"> 
+        <div class="textoAbsolute" id="textoAlign">
         <p class="titulo">Beneficios</p>
         <p class="subtitulo">Da musica</p>
+    </div>
         <div class="alignCircle">
             <div class="alignColumn">
-            <div class="circulo"></div>
+            <div class="circulo"  onclick="modalCircle()" id="circles" ></div>
             <p>beneficio 1</p>
         </div>
         <div class="alignColumn">
-            <div class="circulo"></div>
+            <div class="circulo"  onclick="modalCircle2()" id="circles2"></div>
             <p>beneficio 1</p>
         </div>
         <div class="alignColumn">
-            <div class="circulo"></div>
+            <div class="circulo"  onclick="modalCircle3()" id="circles3"></div>
             <p>beneficio 1</p>
         </div>
         <div class="alignColumn">
-            <div class="circulo"></div>
+            <div class="circulo"  onclick="modalCircle4()" id="circles4"></div>
             <p>beneficio 1</p>
         </div>
 
     </div></section>
     <section class="sec tree" id="tres">
        <div class="fundo">
-        <div class="cicle"></div>
+        <div class="cicle""></div>
         <div class="cicle umC"></div>
         <div class="cicle doisC"></div>
         <div class="contCadastro" id="cadastro">
@@ -143,7 +145,11 @@
         </div>
     </section>
     <section class="sec four">
-        <div class="vinheta"></div>
+        <div class="metade">
+            <p class="alt" style="font-size: 58px; height: 58px;">Sobre mim</p>
+            <div class="texto"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus soluta praesentium quia culpa deserunt, animi, labore nemo dolorum, sit nisi harum eveniet unde hic illum neque tenetur asperiores temporibus voluptas!</p></div>
+        </div>
+        <div class="metadeDois"></div>
 
       
          
@@ -155,6 +161,10 @@
 </body>
 </html>
 <script>
+    var circuloBol1 = false
+    var circuloBol2 = false
+    var circuloBol3 = false
+    var circuloBol4 = false
     addEventListener("mousemove", scrol(event));
     function modalNav(){
       nav =  document.getElementById('nav')
@@ -191,4 +201,97 @@
         cadForm.classList.toggle('invisible')
         logForm.classList.toggle('invisible')
     }
+
+    function modalCircle2() {
+        var circle2 = document.getElementById('circles2')
+       
+
+circle2.classList.toggle('cardCircle')
+
+if (circuloBol2) {
+    circuloBol2 = false
+} else {
+    circuloBol2 = true
+
+    
+}
+if (circuloBol1 || circuloBol2 || circuloBol3 || circuloBol4) {
+
+var textoAlign = document.getElementById('textoAlign')
+textoAlign.classList.add('ativo')
+} else if (circuloBol1 == false && circuloBol2 == false && circuloBol3 == false && circuloBol4 == false) {
+var textoAlign = document.getElementById('textoAlign')
+textoAlign.classList.remove('ativo')
+
+}
+
+    }
+    function modalCircle3() {
+        var circle3 = document.getElementById('circles3')
+
+circle3.classList.toggle('cardCircle')
+if (circuloBol3) {
+    circuloBol3 = false
+} else {
+    circuloBol3 = true
+
+    
+}
+if (circuloBol1 || circuloBol2 || circuloBol3 || circuloBol4) {
+
+var textoAlign = document.getElementById('textoAlign')
+textoAlign.classList.add('ativo')
+} else if (circuloBol1 == false && circuloBol2 == false && circuloBol3 == false && circuloBol4 == false) {
+var textoAlign = document.getElementById('textoAlign')
+textoAlign.classList.remove('ativo')
+
+}
+
+    }
+    function modalCircle4() {
+        var circle4 = document.getElementById('circles4')
+
+circle4.classList.toggle('cardCircle')
+if (circuloBol4) {
+    circuloBol4 = false
+} else {
+    circuloBol4 = true
+
+    
+}
+if (circuloBol1 || circuloBol2 || circuloBol3 || circuloBol4) {
+
+var textoAlign = document.getElementById('textoAlign')
+textoAlign.classList.add('ativo')
+} else if (circuloBol1 == false && circuloBol2 == false && circuloBol3 == false && circuloBol4 == false) {
+var textoAlign = document.getElementById('textoAlign')
+textoAlign.classList.remove('ativo')
+
+}
+
+    }
+
+    function modalCircle() {
+        var circle = document.getElementById('circles')
+
+circle.classList.toggle('cardCircle') 
+if (circuloBol1) {
+    circuloBol1 = false
+} else {
+    circuloBol1 = true
+
+   
+}
+if (circuloBol1 || circuloBol2 || circuloBol3 || circuloBol4) {
+
+var textoAlign = document.getElementById('textoAlign')
+textoAlign.classList.add('ativo')
+} else if (circuloBol1 == false && circuloBol2 == false && circuloBol3 == false && circuloBol4 == false) {
+var textoAlign = document.getElementById('textoAlign')
+textoAlign.classList.remove('ativo')
+
+}
+
+    }
+  
 </script>
