@@ -256,7 +256,7 @@ p {
 
 }
 
-.btn {
+.btn_alt {
     width: 320px;
     padding: 8px;
     height: auto;
@@ -284,6 +284,10 @@ p {
     display: flex;
     flex-direction: row;
     height: 100vh;
+    align-items: center;
+    justify-content: center;
+  
+
 }
 
 
@@ -691,6 +695,24 @@ p {
     transition: 0.5s ease;
 
 }
+.btn {
+    width: 175px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: #3498db;
+ 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: "Bebas Neue", sans-serif !important;
+    transition: 0.5s ease;
+    border: none;
+
+}
 .botaoLogin:hover {
     background-color: #3498db;
    
@@ -796,7 +818,7 @@ p {
 } 
 .metade {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     width: calc(50% - 2rem);
     height: 100%;
@@ -812,4 +834,39 @@ p {
     height: 100%;
     background-color: #1d1d1d;
 
+}
+.gradiente {
+    width: 80%;
+    height: 400px;
+    background: rgb(52,152,219);
+background: linear-gradient(90deg, rgba(52,152,219,1) 0%, rgba(52,152,219,1) 35%, rgba(32,111,163,1) 100%);
+position: absolute;
+}
+.aboutUs {
+    width: 45%;
+    height: 90%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 5px;
+    align-items: start;
+    justify-content: center;
+    padding: 1rem 2rem;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.116);
+ 
+    
+}
+.imgPessoa {
+    width: 550px;
+    height: 450px;
+}
+.alignAbout {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    z-index: 40;
+    align-items: end;
+    justify-content: space-around;
 }
