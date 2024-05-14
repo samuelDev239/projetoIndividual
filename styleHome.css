@@ -277,7 +277,7 @@ p {
     height: 95vh;
     padding: 0rem;
     scroll-snap-align: start;
-    background-color: #ededed;
+    background-color: #dddddd;
 
 }
 .sec.four {
@@ -431,7 +431,7 @@ p {
 
     .contCad {
         width: 70%;
-        background-color: #ededed;
+        background-color: #dddddd;
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -858,7 +858,7 @@ position: absolute;
     
 }
 .imgPessoa {
-    width: 550px;
+    width: 450px;
     height: 450px;
 }
 .alignAbout {
@@ -868,5 +868,5 @@ position: absolute;
     position: absolute;
     z-index: 40;
     align-items: end;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }

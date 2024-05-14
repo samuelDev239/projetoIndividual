@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <title>Document</title>
+    digite os noms dos seus projetos: <input type="text" id="projetosIpt">
+    <button onclick="registro()">Registrar</button>
+    <button onclick="mostrar()">mostrar projetos</button>
+    <div id="mensagem"></div>
+    
+</body>
+</html>
+<script>
+       var listaProjetos = []
+       var qtd = 0
+ 
+       
+       function mostrar() {
+        console.log(qtd)
+        var teste = 0
+        var j = 1
+             qtd = listaProjetos.length 
+            for(var i = 0; i < qtd; i++ ) {
+             
+             
+             
+                mensagem.innerHTML += `${listaProjetos[qtd  - j]} <br>`
+       
+                console.log(j)
+                j++
+      
+           
+              
+
+            }
+        }
+
+    function registro() {
+        var quantidade = listaProjetos.length
+     
+        var projetos = projetosIpt.value
+        listaProjetos.push(projetos)
+        if(quantidade >= 0 && quantidade <= 4) {
+            mensagem.innerHTML += ` Você já fez ${quantidade} projetos. Por isso você é um profissional junior <br>  `
+
+        }
+        else if(quantidade >= 5 && quantidade <= 12) {
+            mensagem.innerHTML += ` Você já fez ${quantidade} projetos. Por isso você é um profissional pleno <br> `
+
+        }
+        else if(quantidade >= 13) {
+            mensagem.innerHTML += ` Você já fez ${quantidade} projetos. Por isso você é um profissional senior  <br>`
+
+        }
+
+    }
+</script>
