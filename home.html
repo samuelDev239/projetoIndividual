@@ -70,7 +70,7 @@
         </div>
         <div class="alignCircle">
             <div class="alignColumn">
-                <div class="circulo" onclick="modalCircle()" id="circles"></div>
+                <div class="circulo" onclick="modalCircle()" id="circles"><p class="textoNor textoDis" id="titulo" style="font-size: 22px; font-weight: 500;">Titulo 1</p><p class="textoNor textoDis" id="textoCirculo1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor eligendi ea officiis, tempora debitis cum veritatis. Cumque adipisci a quia impedit quas corrupti assumenda autem, nisi cum dicta accusamus. Quam!</p></div>
                 <p>beneficio 1</p>
             </div>
             <div class="alignColumn">
@@ -90,7 +90,7 @@
     </section>
     <section class="sec tree" id="tres">
         <div class="fundo">
-            <div class="cicle""></div>
+            <div class="cicle"></div>
         <div class=" cicle umC"></div>
             <div class="cicle doisC"></div>
             <div class="contCadastro" id="cadastro">
@@ -311,12 +311,30 @@
 
     function modalCircle() {
         var circle = document.getElementById('circles')
+        var text = document.getElementById('textoCirculo1')
+        var titulo = document.getElementById('titulo')
+        setTimeout(()=> {
+            
+        text.classList.toggle('textoDis')
+        titulo.classList.toggle('textoDis')
+
+
+        }, 0)
+      
+       if(circuloBol1 == false) {
+        text.classList.add('textoDis')
+        titulo.classList.add('textoDis')
+
+
+       }
 
         circle.classList.toggle('cardCircle')
         if (circuloBol1) {
             circuloBol1 = false
         } else {
             circuloBol1 = true
+
+            
 
 
         }

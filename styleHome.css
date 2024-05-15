@@ -31,6 +31,15 @@ body {
     }
     
 }
+@keyframes opTex {
+    0% {}
+    
+    100% {
+       opacity: 100%;
+    }
+    
+    
+}
 @keyframes randomDois {
     0% {}
     50% {
@@ -759,7 +768,32 @@ p {
     transition: 1s;
     position: absolute;
     transform: matrix3d(50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
     
+
+}
+.textoNor {
+    opacity: 0%;
+    animation: opTex;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    transition: 0.5s;
+    font-weight: 400;
+    font-size: 14px;
+    width: 80%;
+
+    
+    
+}
+.textoNor.textoDis{
+    display: none;
+    
+  
 }
 .circulo.circulo.cardCircle:hover {
     
