@@ -3,46 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mirza:wght@400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Vampiro+One&display=swap"
+        rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <div class="tecla" id="dó"  onclick="ativarDo()"></div>
-        <div class="tecla" id="ré" onclick="ativarRe()"></div>
-        <div class="tecla" id="mi"  onclick="ativarMi()"></div>
-        <div class="tecla" id="fa"  onclick="ativarFa()"></div>
-        <div class="tecla" id="sol"  onclick="ativarSol()"></div>
-        <div class="tecla" id="la"  onclick="ativarLa()"></div>
-        <div class="tecla" id="si"  onclick="ativarSi()"></div>
+    <nav class="lateral">
+        <div class="modos">
+        <div class="texto">
+        <p>Ola, usuario</p>
+        <p>Seja bem vindo a musical logic</p>
     </div>
-    <div class="sustenidos">
-        <div class="div one">
-        <div class="tecla sus" id="dóSustenido"  onclick="ativarDoSus()"></div>
-        <div class="tecla sus" id="réSustenido"  onclick="ativarReSus()"></div>
+</div>
+    <div class="modos">
+        <ul>
+            <li><img src="/assets/reprodutor-de-musica.png" alt="" class="icone"> Modo de escalas</li>
+            <li><img src="/assets/reprodutor-de-musica.png" alt="" class="icone"> Modo de acordes maiores</li>
+            <li><img src="/assets/reprodutor-de-musica.png" alt="" class="icone"> Modo de acordes menores</li>
+            <li><img src="/assets/reprodutor-de-musica.png" alt="" class="icone"> Modo livre</li>
+        </ul>
     </div>
-    <div class="div two">
-        <div class="tecla sus" id="faSustenido"  onclick="ativarFaSus()"></div>
-        <div class="tecla sus" id="solSustenido"  onclick="ativarSolSus()"></div>
-        <div class="tecla sus" id="laSustenido"  onclick="ativarLaSus()"></div>
-    </div>
-    <div id="mensagem"></div>
 
-
-
-
-
-
+    <div class="modos">
+        <ul>
+            <li>Meus resultados</li>
+            <li>Manual</li>
+            <li>Preferencias</li>
+            <li>Sair</li>
+        </ul>
 
     </div>
+
+   
+
+
+    </nav>
+    <div class="cont">
+        <div class="conteudo">
+        <div class="subtitulo"><h1 class="sub">Modo de escalas</h1></div>
+        <div class="container">
+            <div class="tecla" id="dó"  onclick="ativarDo()"></div>
+            <div class="tecla" id="ré" onclick="ativarRe()"></div>
+            <div class="tecla" id="mi"  onclick="ativarMi()"></div>
+            <div class="tecla" id="fa"  onclick="ativarFa()"></div>
+            <div class="tecla" id="sol"  onclick="ativarSol()"></div>
+            <div class="tecla" id="la"  onclick="ativarLa()"></div>
+            <div class="tecla" id="si"  onclick="ativarSi()"></div>
+        </div>
+        <div class="sustenidos">
+            <div class="div one">
+            <div class="tecla sus" id="dóSustenido"  onclick="ativarDoSus()"></div>
+            <div class="tecla sus" id="réSustenido"  onclick="ativarReSus()"></div>
+        </div>
+        <div class="div two">
+            <div class="tecla sus" id="faSustenido"  onclick="ativarFaSus()"></div>
+            <div class="tecla sus" id="solSustenido"  onclick="ativarSolSus()"></div>
+            <div class="tecla sus" id="laSustenido"  onclick="ativarLaSus()"></div>
+        </div>
+    </div>
+    <button class="btn" onclick="analisarEscala()"><p>Confirmar</p></button>
+    <div class="Msg">
+        <p style="font-size: 22px;" id="escala"></p>
+        <p id="resultado"></p>
+
+    </div>
+        <div id="mensagem">
+        </div>
+     
+    </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- </div>
     <button onclick="analisarEscala()">ver</button>
     <button onclick="analisarAcordesMaiores()">acordes maiores</button>
     <button onclick="analisarEscala()">ver</button>
-    <button onclick="analisarEscala()">ver</button>
+    <button onclick="analisarEscala()">ver</button> -->
     
 </body>
 </html>
 <script>
+    var escalas = ['Dó', 'Ré', 'Mi', "Fá", 'Sol', 'Lá', 'Sí', 'Dó#', 'Ré#', 'Fá#', 'Sol#', 'Lá#']
+    var escalaPassada = []
     var ativoDo = false
     var ativoDoSus = false
     var ativoRe = false
@@ -55,6 +107,20 @@
     var ativoLa = false
     var ativoLaSus = false
     var ativoSi = false
+    var escDo = false
+    var escRe = false
+    var escMi = false
+    var escFa = false
+    var escSol = false
+    var escLa = false
+    var escSi = false
+    var escDoSus = false
+    var escReSus = false
+    var escFaSus = false
+    var escSolSus = false
+    var escLaSus = false
+
+   
    function ativarDo(){
     const tecla = document.querySelector('#dó');
     tecla.classList.toggle('ativo');
@@ -180,12 +246,14 @@
    
      if(ativoDo == true && ativoDoSus  == false && ativoRe  == false && ativoReSus  == false && ativoMi  == true && ativoFa  == false && ativoFaSus == false && ativoSol == true && ativoSolSus == false && ativoLa == false && ativoLaSus == false && ativoSi == false ) {
         mensagem.innerHTML = `acorde maior de dó`
+
     } 
     else if(ativoDo == false && ativoDoSus  == true && ativoRe  == false && ativoReSus  == false && ativoMi  == false && ativoFa  == true && ativoFaSus == false && ativoSol == false && ativoSolSus == true && ativoLa == false && ativoLaSus == false && ativoSi == false ) {
         mensagem.innerHTML = `acorde maior de dó sustenido`
     } 
     else if(ativoDo == false && ativoDoSus  == false && ativoRe  == true && ativoReSus  == false && ativoMi  == false && ativoFa  == false && ativoFaSus == true && ativoSol == false && ativoSolSus == false && ativoLa == true && ativoLaSus == false && ativoSi == false ) {
         mensagem.innerHTML = `acorde maior de ré`
+
     } 
     else if(ativoDo == false && ativoDoSus  == false && ativoRe  == false && ativoReSus  == false && ativoMi  == true && ativoFa  == false && ativoFaSus == false && ativoSol == false && ativoSolSus == true && ativoLa == false && ativoLaSus == false && ativoSi == true ) {
         mensagem.innerHTML = `acorde maior de mi`
@@ -218,44 +286,167 @@
     
    }
 
+   function limparBol() {
+     escDo = false
+     escRe = false
+     escMi = false
+     escFa = false
+     escSol = false
+     escLa = false
+     escSi = false
+     escDoSus = false
+     escReSus = false
+     escFaSus = false
+     escSolSus = false
+     escLaSus = false
+
+   }
+
    function analisarEscala(){
+    setTimeout(() => {
+
+    resultado.innerHTML = ''
+
+    }, 2000)
+    setTimeout(limparBol(), 3000)
+    
+   
     if(ativoDo == true && ativoRe  == true && ativoMi  == true && ativoFa  == true && ativoSol  == true && ativoSi  == true && ativoDoSus == false && ativoReSus == false && ativoFaSus == false && ativoSolSus == false && ativoLaSus == false) {
+        escDo = true
         mensagem.innerHTML = `escala de dó`
+
     } 
     else if(ativoDoSus  == true && ativoReSus  == true && ativoFa  == true && ativoFaSus  == true && ativoSolSus  == true && ativoLaSus  == true && ativoDo  == true && ativoRe == false && ativoMi == false && ativoSol == false && ativoLa == false && ativoSi == false) {
         mensagem.innerHTML = `escala de dó sustenido`
+        escDoSus = true
+
     } 
     else if(ativoRe  == true && ativoMi  == true && ativoFaSus  == true && ativoSol  == true && ativoLa  == true && ativoSi  == true && ativoDoSus  == true && ativoDo == false && ativoFa == false && ativoReSus == false && ativoSolSus == false && ativoLaSus == false) {
         mensagem.innerHTML = `escala de ré`
+        escRe = true
+
     } 
     else if(ativoReSus  == true && ativoFa  == true && ativoSol  == true && ativoSolSus  == true && ativoLaSus  == true && ativoDo  == true && ativoRe  == true && ativoFaSus == false && ativoSi == false && ativoLa == false && ativoDoSus == false && ativoMi == false) {
         mensagem.innerHTML = `escala de ré sustenido`
+        escReSus = true
+
     } 
     else if(ativoMi  == true && ativoFaSus  == true && ativoSolSus  == true && ativoLa  == true && ativoSi  == true && ativoDoSus  == true && ativoReSus  == true && ativoRe == false && ativoDo == false && ativoSol == false && ativoLaSus == false && ativoFa == false)  {
         mensagem.innerHTML = `escala de mi`
+        escMi = true
+
     } 
     else if(ativoFa  == true && ativoSol  == true && ativoLa  == true && ativoLaSus  == true && ativoDo  == true && ativoRe  == true && ativoMi  == true && ativoFaSus == false && ativoReSus == false && ativoSolSus == false && ativoDoSus == false && ativoSi == false) {
         mensagem.innerHTML = `escala de Fa`
+        escFa = true
+
     } 
     else if(ativoFaSus  == true && ativoSolSus  == true && ativoLaSus  == true && ativoSi  == true && ativoDoSus  == true && ativoReSus  == true && ativoFa  == true && ativoMi == false && ativoRe == false && ativoDo == false && ativoSol == false && ativoLa == false) {
         mensagem.innerHTML = `escala de Fa sustenido`
+        EscFaSus = true
+
     } 
     else if(ativoSol  == true && ativoLa  == true && ativoSi  == true && ativoDo  == true && ativoRe  == true && ativoMi  == true && ativoFaSus  == true && ativoFa == false && ativoReSus == false && ativoSolSus == false && ativoLaSus == false && ativoDoSus == false) {
         mensagem.innerHTML = `escala de sol`
+        escSol = true
+
     }
     else if(ativoSolSus  == true && ativoLaSus  == true && ativoDo  == true && ativoDoSus  == true && ativoReSus  == true && ativoFa  == true && ativoSol  == true && ativoFaSus == false && ativoMi == false && ativoLa == false && ativoSi == false && ativoRe == false) {
         mensagem.innerHTML = `escala de sol sustenido`
+        escSolSus = true
+
     }
     else if(ativoLa  == true && ativoSi  == true && ativoDoSus  == true && ativoRe  == true && ativoMi  == true && ativoFaSus  == true && ativoSolSus  == true && ativoSol == false && ativoFa == false && ativoReSus == false && ativoDo == false && ativoLaSus == false) {
         mensagem.innerHTML = `escala de Lá`
+        escLa = true
+
     } 
     else if(ativoLaSus  == true && ativoDo  == true && ativoRe  == true && ativoReSus  == true && ativoFa  == true && ativoSol  == true && ativoLa  == true && ativoSolSus == false && ativoFaSus == false && ativoMi == false && ativoSi == false && ativoDoSus == false) {
         mensagem.innerHTML = `escala de Lá sustenido`
+        escLaSus = true
+
     }
     else if(ativoSi  == true && ativoDoSus  == true && ativoReSus  == true && ativoMi  == true && ativoFaSus  == true && ativoSolSus  == true && ativoLaSus  == true && ativoLa == false && ativoSol == false && ativoFa == false&& ativoDo == false && ativoRe == false) {
         mensagem.innerHTML = `escala de Si`
+        escSi = true
+
     } else {
         mensagem.innerHTML = `escala invalida, lembre-se que umas escala tem 7 notas`
     }
+    
+    var numRandom = Math.random() * 11
+        var num = numRandom.toFixed()
+        var notaAtual = escalas[num]
+        escalaPassada.push(notaAtual)
+        var notaPassada = escalaPassada[escalaPassada.length - 2]
+        console.log(notaPassada)
+       
+
+    
+        escala.innerHTML = `Escala de <b>${notaAtual}</b>`
+        if(notaPassada == "Dó" && escDo) {
+            console.log("acertou")
+            resultado.innerHTML = "acertou"
+            
+        }
+        else if(notaPassada == "Ré" && escRe == true) {
+            resultado.innerHTML = "acertou"
+            
+        }
+       
+        else if(notaPassada == "Mi" && escMi == true) {
+            resultado.innerHTML = "acertou"
+            
+        }
+      
+        else if(notaPassada == "Fá" && escFa == true) {
+            resultado.innerHTML = "acertou"
+            
+        }
+   
+        else if(notaPassada == "Sol" && escSol == true) {
+            resultado.innerHTML = "acertou"
+            
+        }
+      
+        else if(notaPassada == "Lá" && escLa == true) {
+            resultado.innerHTML = "acertou"
+            
+        }
+       
+        else if(notaPassada == "Sí" && escSi == true) {
+            resultado.innerHTML = "acertou"
+            
+        }
+       
+        else if(notaPassada == "Dó#" && escDoSus == true) {
+            resultado.innerHTML = "acertou"
+            
+        }
+       
+        else if(notaPassada == "Ré#" && escReSus == true) {
+            resultado.innerHTML = "acertou"
+            
+        }
+       
+        else if(notaPassada == "Fá#" && escFaSus == true) {
+            resultado.innerHTML = "acertou"
+            
+        }
+       
+        else if(notaPassada == "Sol#" && escSolSus == true) {
+            resultado.innerHTML = "acertou"
+            
+        }
+       
+        else if(notaPassada == "Lá#" && escLaSus == true) {
+            resultado.innerHTML = "acertou"
+            
+        }
+        else {
+            resultado.innerHTML = "errou"
+        }
+       
+ 
    }
 </script>
