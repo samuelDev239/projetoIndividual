@@ -14,28 +14,24 @@
 </head>
 <body>
     <nav class="lateral">
-        <div class="modos">
-        <div class="texto">
-        <p>Ola, usuario</p>
-        <p>Seja bem vindo a musical logic</p>
-    </div>
-</div>
-    <div class="modos">
-        <ul>
-            <li><img src="/assets/reprodutor-de-musica.png" alt="" class="icone"> Modo de escalas</li>
-            <li><img src="/assets/reprodutor-de-musica.png" alt="" class="icone"> Modo de acordes maiores</li>
-            <li><img src="/assets/reprodutor-de-musica.png" alt="" class="icone"> Modo de acordes menores</li>
-            <li><img src="/assets/reprodutor-de-musica.png" alt="" class="icone"> Modo livre</li>
-        </ul>
-    </div>
+        <div class="contNav">
+       <div class="wraper"><img src="/assets/icon.png" alt="" class="icone"><p style="font-size: 22px; font-weight: 500; color: #ffff;">Musical logic</p></div></div>
+       <div class="contNav">
+        <div class="wraper"><img src="/assets/icon3.png" alt="" class="icone"><p style="color: #ffff; font-weight: 300;">Modo de escalas</p></div>
+        <div class="wraper"><img src="/assets/icon2.png" alt="" class="icone"><p style="color: #ffff; font-weight: 300;">Modo de escalas</p></div>
+        <div class="wraper"><img src="/assets/icon1.png" alt="" class="icone"><p style="color: #ffff; font-weight: 300;">Modo de escalas</p></div>
+       </div>
 
-    <div class="modos">
-        <ul>
-            <li>Meus resultados</li>
-            <li>Manual</li>
-            <li>Preferencias</li>
-            <li>Sair</li>
-        </ul>
+       <div class="contNav">
+        <div class="wraper"><img src="/assets/config.png" alt="" class="icone"><p style="color: #ffff; font-weight: 300;">Configurações</p></div>
+        <div class="wraper"><img src="/assets/pref.png" alt="" class="icone"><p style="color: #ffff; font-weight: 300;">Preferencias</p></div>
+
+       </div>
+
+       <div class="contNav" style="margin-top: 4rem;">
+        <div class="wraper"><img src="/assets/sair.png" alt="" class="icone"><p style="color: #ffff; font-weight: 300;">Sair</p></div>
+
+       </div>
 
     </div>
 
@@ -43,10 +39,17 @@
 
 
     </nav>
+   
+            <div class="paiCirculos">
+                <div class="cicle"></div>
+                <div class=" cicle umC"></div>
+                    <div class="cicle doisC"></div>
+            </div>
     <div class="cont">
         <div class="conteudo">
         <div class="subtitulo"><h1 class="sub">Modo de escalas</h1></div>
         <div class="container">
+            
             <div class="tecla" id="dó"  onclick="ativarDo()"></div>
             <div class="tecla" id="ré" onclick="ativarRe()"></div>
             <div class="tecla" id="mi"  onclick="ativarMi()"></div>
@@ -119,6 +122,32 @@
     var escFaSus = false
     var escSolSus = false
     var escLaSus = false
+    var erros = 0
+    var acertos = 0
+    var errosDo = 0
+    var acertosDo = 0
+    var errosRe = 0
+    var acertosRe = 0
+    var errosMi = 0
+    var acertosMi = 0
+    var errosFa = 0
+    var acertosFa = 0
+    var errosSol = 0
+    var acertosSol = 0
+    var errosLa = 0
+    var acertosLa = 0
+    var errosSi = 0
+    var acertosSi = 0
+    var errosDoSus = 0
+    var acertosDoSus = 0
+    var errosReSus = 0
+    var acertosReSus = 0
+    var errosFaSus = 0
+    var acertosFaSus = 0
+    var errosSolSus = 0
+    var acertosSolSus = 0
+    var errosLaSus = 0
+    var acertosLaSus = 0
 
    
    function ativarDo(){
@@ -387,65 +416,91 @@
         if(notaPassada == "Dó" && escDo) {
             console.log("acertou")
             resultado.innerHTML = "acertou"
+            acertos++
+            acertosDo++
             
         }
         else if(notaPassada == "Ré" && escRe == true) {
             resultado.innerHTML = "acertou"
+            acertos++
+            acertosRe++
             
         }
        
         else if(notaPassada == "Mi" && escMi == true) {
             resultado.innerHTML = "acertou"
+            acertos++
+            acertosMi++
             
         }
       
         else if(notaPassada == "Fá" && escFa == true) {
             resultado.innerHTML = "acertou"
+            acertos++
+            acertosFa++
             
         }
    
         else if(notaPassada == "Sol" && escSol == true) {
             resultado.innerHTML = "acertou"
+            acertos++
+            acertosSol++
             
         }
       
         else if(notaPassada == "Lá" && escLa == true) {
             resultado.innerHTML = "acertou"
+            acertos++
+            acertosLa++
             
         }
        
         else if(notaPassada == "Sí" && escSi == true) {
             resultado.innerHTML = "acertou"
+            acertos++
+            acertosSi++
             
         }
        
         else if(notaPassada == "Dó#" && escDoSus == true) {
             resultado.innerHTML = "acertou"
+            acertos++
+            acertosDoSus++
             
         }
        
         else if(notaPassada == "Ré#" && escReSus == true) {
             resultado.innerHTML = "acertou"
+            acertos++
+            acertosReSus++
             
         }
        
         else if(notaPassada == "Fá#" && escFaSus == true) {
             resultado.innerHTML = "acertou"
+            acertos++
+            acertosFaSus++
             
         }
        
         else if(notaPassada == "Sol#" && escSolSus == true) {
             resultado.innerHTML = "acertou"
+            acertos++
+            acertosSolSus++
             
         }
        
         else if(notaPassada == "Lá#" && escLaSus == true) {
             resultado.innerHTML = "acertou"
+            acertos++
+            acertosLaSus++
             
         }
         else {
             resultado.innerHTML = "errou"
+            erros++
         }
+        resultado.innerHTML += `<br>pontos: ${acertos}<br> erros: ${erros}`
        
  
    }

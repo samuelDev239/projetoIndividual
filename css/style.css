@@ -9,6 +9,37 @@ body {
     display: flex;
     align-items: center;
     gap: 3rem;
+    background-color: #030303;
+    overflow: hidden;
+}
+@keyframes randomUm {
+    0% {}
+    50% {
+        transform: translate(100px, 200px);
+    }
+    100% {
+        transform: translate(300px, 300px);
+    }
+    
+}
+@keyframes randomDois {
+    0% {}
+    50% {
+        transform: translate(200px, 300px);
+    }
+    100% {
+        transform: translate(300px, -100px);
+    }
+    
+}
+@keyframes randomTres {
+    0% {}
+    50% {
+        transform: translate(50px, -100px);
+    }
+    100% {
+        transform: translate(200px, -200px);
+    }
 }
 .container {
     display: flex;
@@ -19,11 +50,41 @@ body {
 
     
 }
+.cicle.doisC {
+    width: 180px;
+    height: 180px;
+    transform: translate(-200px, 350px);
+    animation: none;
+    animation: randomTres 15s infinite alternate;
+} 
+.cicle.umC {
+    width: 150px;
+    height: 150px;
+    animation: randomDois 15s infinite alternate;
+    transform: translate(-100px);
+
+}
+.cicle {
+
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    border-radius: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% 50%);
+    animation: randomUm 15s infinite alternate;
+    transform: translate(300px);
+   
+}
 .tecla {
     width: 50px;
     height: 200px;
     border: 1px solid black;
     border-radius: 3px;
+    background-color: #efefef;
 
 }
 .tecla.sus {
@@ -42,8 +103,8 @@ body {
 .sustenidos {
     display: flex;
     position: absolute;
-    left: 720px;
-    top: 7rem;
+    left: 340px;
+    top: 5.8rem;
     gap: 3.5rem;
 }
 .div {
@@ -62,17 +123,16 @@ body {
 }
 
 .lateral {
-    height: calc(100vh - 2rem);
-    width: 350px;
+    height: calc(100vh - 4rem);
+    width: 250px;
     /* box-shadow: 0px 10px 20px #1d1d1d85; */
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     /* justify-content: space-around; */
-    gap: 4rem;
+    gap: 5rem;
+    padding-top: 4rem;
     flex-direction: column;
-    padding-left: 2rem;
-    padding-top: 2rem;
-    background-color: #dddd;
+    background-color: #1d1d1d;
 }
 
 li {
@@ -90,58 +150,41 @@ li {
 }
 p {
     width: auto;
+    font-size: 16px;
 }
-.modos {
-    background-color: #1d1d1d;
-    width: calc(100% -2rem);
-    height: 100px;
-    padding: 1rem 0rem 1rem 0;
-    border-radius: 10px 0px 0px 10px;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    padding-left: 2rem;
-    justify-content: center;
-    color: #fff;
-    font-weight: 500;
-}
-ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
+
 
 .icone {
     width: 18px;
     height: 18px;
-    filter: invert(1);
-    /* opacity: 0%; */
-    display: none;
+    filter: invert(1); 
     transition: 0.5s;
 
 
 }
-li {
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-    gap: 8px;
-}
-li:hover img{
-    display: flex;
-}
+
 
 .cont {
-    width: 900px;
+    width: 1000px;
     height: calc(600px - 2rem);
     padding-top: 2rem;
     border-radius: 10px;
-    background-color: #dddd;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
     gap: 2rem;
+    position: absolute;
+    z-index: 1000;
+    backdrop-filter: blur(20px);
+    right: 50px;
+    top: 10px;
+}
+.paiCirculos {
+    width: 1000px;
+    height: calc(600px - 2rem);
+
 }
 .sub {
     font-family: "bebas neue";
@@ -191,4 +234,21 @@ li:hover img{
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+}
+.wraper {
+    display: flex;
+    gap: 1.2rem;
+    width: 80%;
+   
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.contNav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
 }

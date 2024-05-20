@@ -31,15 +31,6 @@ body {
     }
     
 }
-@keyframes opTex {
-    0% {}
-    
-    100% {
-       opacity: 100%;
-    }
-    
-    
-}
 @keyframes randomDois {
     0% {}
     50% {
@@ -60,6 +51,16 @@ body {
     }
     
 }
+@keyframes opTex {
+    0% {}
+    
+    100% {
+       opacity: 100%;
+    }
+    
+    
+}
+
 @keyframes loading-wave-animation {
     0% {
       height: 10px;
