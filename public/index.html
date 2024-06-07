@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styleHome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="./js/sessao.js"></script>
+
+  <script src="./js/sessao.js"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mirza:wght@400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Vampiro+One&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <section class="sec one">
+
+        <nav id="nav" class="lateralNav">
+            <div onclick="modalNav()" class="hamburger"></div>
+        </nav>
+        <div class="container">
+
+            <div class="tecla" id="dó" onclick="ativarDo()"></div>
+            <div class="tecla" id="ré" onclick="ativarRe()"></div>
+            <div class="tecla" id="mi" onclick="ativarMi()"></div>
+            <div class="tecla" id="fa" onclick="ativarFa()"></div>
+            <div class="tecla" id="sol" onclick="ativarSol()"></div>
+            <div class="tecla" id="la" onclick="ativarLa()"></div>
+            <div class="tecla" id="si" onclick="ativarSi()"></div>
+        </div>
+        <div class="sustenidos">
+            <div class="div one">
+                <div class="tecla sus" id="dóSustenido" onclick="ativarDoSus()"></div>
+                <div class="tecla sus" id="réSustenido" onclick="ativarReSus()"></div>
+            </div>
+            <div class="div two">
+                <div class="tecla sus" id="faSustenido" onclick="ativarFaSus()"></div>
+                <div class="tecla sus" id="solSustenido" onclick="ativarSolSus()"></div>
+                <div class="tecla sus" id="laSustenido" onclick="ativarLaSus()"></div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="tituloBox">
+                <p class="titulo"> Musical </p>
+                <p class="subtitulo"> logic </p>
+            </div>
+
+
+            <div class="textos">
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias tempora culpa nisi non cumque
+                    corporis vel maiores incidunt atque debitis impedit dolorem minima recusandae sint sit esse, optio
+                    accusamus necessitatibus?
+                </p>
+            </div>
+
+            <div class="btn_alt">
+                <a href="#tres" class="alt" style="text-decoration: none; color: #1d1d1d; cursor: pointer;"> TESTAR
+                    AGORA</a>
+            </div>
+        </div>
+    </section>
+    <section class="sec two" id="dois">
+        <div class="textoAbsolute" id="textoAlign">
+            <p class="titulo">Beneficios</p>
+            <p class="subtitulo">Da musica</p>
+        </div>
+        <div class="alignCircle">
+            <div class="alignColumn">
+                <div class="circulo" onclick="modalCircle()" id="circles"><p class="textoNor textoDis" id="titulo" style="font-size: 22px; font-weight: 500;">Titulo 1</p><p class="textoNor textoDis" id="textoCirculo1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor eligendi ea officiis, tempora debitis cum veritatis. Cumque adipisci a quia impedit quas corrupti assumenda autem, nisi cum dicta accusamus. Quam!</p></div>
+                <p>beneficio 1</p>
+            </div>
+            <div class="alignColumn">
+                <div class="circulo" onclick="modalCircle2()" id="circles2"></div>
+                <p>beneficio 1</p>
+            </div>
+            <div class="alignColumn">
+                <div class="circulo" onclick="modalCircle3()" id="circles3"></div>
+                <p>beneficio 1</p>
+            </div>
+            <div class="alignColumn">
+                <div class="circulo" onclick="modalCircle4()" id="circles4"></div>
+                <p>beneficio 1</p>
+            </div>
+
+        </div>
+    </section>
+    <section class="sec tree" id="tres">
+        <div class="fundo">
+            <div class="cicle"></div>
+        <div class=" cicle umC"></div>
+            <div class="cicle doisC"></div>
+            <div class="contCadastro" id="cadastro">
+                <div class="loading-wave">
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                </div>
+                <div style="font-size: 52px; height: 62px;" class="alt">Não perca essa chance</div>
+                <div class="texto" style="width: 100%;">
+                    <p style="font-size: 18px; text-align: center;">O primeiro passo é seu, o resto deixa com a gente!
+                    </p>
+                </div>
+                <div class="texto" style="width: 80%;">
+                    <p style="font-weight: 400; text-align: center;">Crie uma conta totalmente gratuita para ter acesso
+                        a <b style="color: #3498db;">todos</b> beneficios que a <b style="color: #3498db;">Musical
+                            logic</b> tem a te oferecer</p>
+                </div>
+                <div class="botaoLogin" onclick="modalLog()">
+                    <p>Já sou cadastrado</p>
+                </div>
+            </div>
+            <div class="contLogin invisible " id="login">
+                <div class="loading-wave">
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                </div>
+                <div style="font-size: 52px; height: 62px;" class="alt">Olá novamente</div>
+                <div class="texto" style="width: 100%;">
+                    <p style="font-size: 18px; text-align: center;">O primeiro passo você ja deu, obrigado!</p>
+                </div>
+                <div class="texto" style="width: 80%;">
+                    <p style="font-weight: 400; text-align: center;">Entre e continue seus desafios <b
+                            style="color: #3498db;">musicais</b> aqui na <b style="color: #3498db;">Musical logic</b>
+                    </p>
+                </div>
+                <div class="botaoLogin" onclick="modalCad()">
+                    <p>Não sou cadastrado</p>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- <div class="fundoCad">
+         
+             
+              
+        </div> -->
+        <div class="contLog invisible" id="logForm">
+
+            <div class="teclasCad"> <input type="text" class="inputTecla cad" placeholder="E-mail aqui" id="email_inputLog"> </div>
+
+            <div class="teclasCad"> <input type="text" class="inputTecla cad" placeholder="Senha" id="senha_inputLog"> </div>
+
+            <div class="teclasCad"> <button class="buttonCad" onclick="entrar()">
+                    <p class="alt" style="color: white; font-size: 70px;">Login</p>
+                </button> </div>
+
+            <div class="teclasCad">
+
+            </div>
+        </div>
+
+        <div class="contCad" id="cadForm">
+            <div class="teclasCad"> <input type="text" class="inputTecla" placeholder="Nome" id="nome_input"> </div>
+
+            <div class="teclasCad"> <input type="text" class="inputTecla" placeholder="E-mail aqui" id="email_input"> </div>
+
+            <div class="teclasCad"> <input type="text" class="inputTecla" placeholder="Senha"  id="senha_input"> </div>
+
+            <div class="teclasCad"> <button class="buttonCad" onclick="cadastrar()">
+                    <p class="alt" style="color: white; font-size: 70px;">Cadastrar</p>
+                </button> </div>
+
+            <div class="teclasCad">
+
+            </div>
+
+
+
+        </div>
+    </section>
+    <section class="sec four">
+       <div class="gradiente"></div>
+     
+       <div class="alignAbout"> 
+       <img src="/assets/skeleton.png" alt="" class="imgPessoa">
+
+         <div class="aboutUs">
+            <p class="texto" style="font-size: 42px; font-weight: 400;">Oi, eu sou</p>
+            <p class="alt" style="font-size: 62px; height: 64px;">Samuel luciano</p>
+            <p class="texto" style=" font-weight: 400; height: 42px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolore optio quidem cupiditate veniam consequatur, dignissimos ex? Ipsam in explicabo officia ut, atque quaerat, aperiam eaque inventore, eligendi cum aliquid.</p>
+            <button class="btn"><p style="color: #1d1d1d; font-family: roboto;">Saiba mais</p></button>
+
+       </div>
+    </div>
+    
+
+    </section>
+
+
+</body>
+
+</html>
+<script>
+     function cadastrar() {
+    aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+  
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" 
+   
+    ) {
+     
+        console.log("(Mensagem de erro para todos os campos em branco)")
+
+      finalizarAguardar();
+      return false;
+    } else {
+     
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+       
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          
+           console.log( "Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+
+          setTimeout(() => {
+        var cad = document.getElementById('cadastro')
+        var login = document.getElementById('login')
+        var logForm = document.getElementById('logForm')
+        var cadForm = document.getElementById('cadForm')
+
+        cadForm.classList.toggle('invisible')
+        logForm.classList.toggle('invisible')
+
+        cad.classList.toggle('invisible')
+        login.classList.toggle('invisible')
+         
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+
+  function entrar() {
+        aguardar();
+
+        var emailVar = email_inputLog.value;
+        var senhaVar = senha_inputLog.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.COR_USUARIO = json.cor;
+             
+
+                    setTimeout(function () {
+                        window.location = "principalHome.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    
+
+    var circuloBol1 = false
+    var circuloBol2 = false
+    var circuloBol3 = false
+    var circuloBol4 = false
+    addEventListener("mousemove", scrol(event));
+    function modalNav() {
+        nav = document.getElementById('nav')
+
+        nav.classList.toggle('ativo')
+    }
+    function scrol(event) {
+
+        console.log('oi')
+
+    }
+
+    function modalLog() {
+        var login = document.getElementById('login')
+        var cad = document.getElementById('cadastro')
+
+        cad.classList.toggle('invisible')
+        login.classList.toggle('invisible')
+        var logForm = document.getElementById('logForm')
+        var cadForm = document.getElementById('cadForm')
+
+        cadForm.classList.toggle('invisible')
+        logForm.classList.toggle('invisible')
+    }
+    function modalCad() {
+        var login = document.getElementById('login')
+        var cad = document.getElementById('cadastro')
+
+        cad.classList.toggle('invisible')
+        login.classList.toggle('invisible')
+        var logForm = document.getElementById('logForm')
+        var cadForm = document.getElementById('cadForm')
+
+        cadForm.classList.toggle('invisible')
+        logForm.classList.toggle('invisible')
+    }
+
+    function modalCircle2() {
+        var circle2 = document.getElementById('circles2')
+
+
+        circle2.classList.toggle('cardCircle')
+
+        if (circuloBol2) {
+            circuloBol2 = false
+        } else {
+            circuloBol2 = true
+
+
+        }
+        if (circuloBol1 || circuloBol2 || circuloBol3 || circuloBol4) {
+
+            var textoAlign = document.getElementById('textoAlign')
+            textoAlign.classList.add('ativo')
+        } else if (circuloBol1 == false && circuloBol2 == false && circuloBol3 == false && circuloBol4 == false) {
+            var textoAlign = document.getElementById('textoAlign')
+            textoAlign.classList.remove('ativo')
+
+        }
+
+    }
+    function modalCircle3() {
+        var circle3 = document.getElementById('circles3')
+
+        circle3.classList.toggle('cardCircle')
+        if (circuloBol3) {
+            circuloBol3 = false
+        } else {
+            circuloBol3 = true
+
+
+        }
+        if (circuloBol1 || circuloBol2 || circuloBol3 || circuloBol4) {
+
+            var textoAlign = document.getElementById('textoAlign')
+            textoAlign.classList.add('ativo')
+        } else if (circuloBol1 == false && circuloBol2 == false && circuloBol3 == false && circuloBol4 == false) {
+            var textoAlign = document.getElementById('textoAlign')
+            textoAlign.classList.remove('ativo')
+
+        }
+
+    }
+    function modalCircle4() {
+        var circle4 = document.getElementById('circles4')
+
+        circle4.classList.toggle('cardCircle')
+        if (circuloBol4) {
+            circuloBol4 = false
+        } else {
+            circuloBol4 = true
+
+
+        }
+        if (circuloBol1 || circuloBol2 || circuloBol3 || circuloBol4) {
+
+            var textoAlign = document.getElementById('textoAlign')
+            textoAlign.classList.add('ativo')
+        } else if (circuloBol1 == false && circuloBol2 == false && circuloBol3 == false && circuloBol4 == false) {
+            var textoAlign = document.getElementById('textoAlign')
+            textoAlign.classList.remove('ativo')
+
+        }
+
+    }
+
+    function modalCircle() {
+        var circle = document.getElementById('circles')
+        var text = document.getElementById('textoCirculo1')
+        var titulo = document.getElementById('titulo')
+        setTimeout(()=> {
+            
+        text.classList.toggle('textoDis')
+        titulo.classList.toggle('textoDis')
+
+
+        }, 0)
+      
+       if(circuloBol1 == false) {
+        text.classList.add('textoDis')
+        titulo.classList.add('textoDis')
+
+
+       }
+
+        circle.classList.toggle('cardCircle')
+        if (circuloBol1) {
+            circuloBol1 = false
+        } else {
+            circuloBol1 = true
+
+            
+
+
+        }
+        if (circuloBol1 || circuloBol2 || circuloBol3 || circuloBol4) {
+
+            var textoAlign = document.getElementById('textoAlign')
+            textoAlign.classList.add('ativo')
+        } else if (circuloBol1 == false && circuloBol2 == false && circuloBol3 == false && circuloBol4 == false) {
+            var textoAlign = document.getElementById('textoAlign')
+            textoAlign.classList.remove('ativo')
+
+        }
+
+    }
+
+</script>

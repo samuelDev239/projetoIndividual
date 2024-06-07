@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Fruta: <input type="text" id="input_fruta">
+    <button onclick="pesquisar()">Pesquisar</button>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    var listaFruta = ["banana", "uva", "maçã", "pêra"]
+
+    function pesquisar() {
+        
+
+       var i = 0
+
+
+        var fruta = input_fruta.value;
+
+        if(listaFruta.indexOf(fruta) >= 0) {
+            mensagem.innerHTML = `${fruta} existe na tabela.`;
+        }else{
+            mensagem.innerHTML = ` Não existe ${fruta}.`;
+        }
+    }
+</script>

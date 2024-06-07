@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mirza:wght@400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Vampiro+One&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body id="corpo" onload="listar(), nivelUser(), mynotes(), mynoteserro(), mynotesacertos(), attGrafico()">
+    <div id="preferencias" class="preferencias invisible" style="top: 70%;">
+        <div class="itemPref">
+            <input type="color" id="cor" onchange="mudarCor(), mynotes()">
+            <p>Cor de fundo</p>
+
+        </div>
+
+    </div>
+    <nav class="lateral">
+        <div class="contNav">
+            <div class="wraper">
+                <img style="height: 35px; width: 35px; filter: invert(1);" src="./assets/image.png" alt=""><p style="font-size: 22px; font-weight: 500; color: #ffff;">Olá <span id="b_usuario"></span> </p> 
+            </div>
+            <div class="nivel" id="nvl"></div>
+        </div>
+        <div class="contNav">
+            <div class="wraper"><img src="/assets/icon3.png" alt="" class="icone">
+                <p onclick="modalLivre()" style="color: #ffff; font-weight: 300;">Modo de escalas</p>
+            </div>
+            <div class="wraper"><img src="/assets/icon2.png" alt="" class="icone">
+                <p onclick="modalLivre()" style="color: #ffff; font-weight: 300;">Modo livre</p>
+            </div>
+
+        </div>
+
+        <div class="contNav">
+            <div class="wraper"><img src="/assets/pref.png" alt="" class="icone">
+                <p onclick="modalPref()" style="color: #ffff; font-weight: 300;">Preferencias</p>
+            </div>
+
+        </div>
+
+        <div id="container" class="contNav" style="margin-top: 4rem;">
+            <div class="wraper"><img src="/assets/sair.png" alt="" class="icone">
+                <p style="color: #ffff; font-weight: 300;">Sair</p>
+            </div>
+
+        </div>
+
+        </div>
+
+
+
+
+    </nav>
+
+    <div class="cont">
+
+
+        <div class="subtitulo">
+            <h1 id="texto1" class="sub">Modo de escalas</h1>
+            <h1 id="texto2" class="sub full">Modo Livre</h1>
+        </div>
+        <div class="container">
+
+            <div class="tecla" id="dó" onclick="ativarDo()">
+                <div class="indicador um"></div>
+            </div>
+            <div class="tecla" id="ré" onclick="ativarRe()">
+                <div class="indicador dois"></div>
+            </div>
+            <div class="tecla" id="mi" onclick="ativarMi()">
+                <div class="indicador tres"></div>
+            </div>
+            <div class="tecla" id="fa" onclick="ativarFa()">
+                <div class="indicador quatro"></div>
+            </div>
+            <div class="tecla" id="sol" onclick="ativarSol()">
+                <div class="indicador cinco"></div>
+            </div>
+            <div class="tecla" id="la" onclick="ativarLa()">
+                <div class="indicador seis"></div>
+            </div>
+            <div class="tecla" id="si" onclick="ativarSi()">
+                <div class="indicador sete"></div>
+            </div>
+        </div>
+        <div class="sustenidos" id="sus">
+            <div class="div one">
+                <div class="tecla sus" id="dóSustenido" onclick="ativarDoSus()">
+                    <div class="indicador oito"></div>
+                </div>
+                <div class="tecla sus" id="réSustenido" onclick="ativarReSus()">
+                    <div class="indicador nove"></div>
+                </div>
+            </div>
+            <div class="div two">
+                <div class="tecla sus" id="faSustenido" onclick="ativarFaSus()">
+                    <div class="indicador dez"></div>
+                </div>
+                <div class="tecla sus" id="solSustenido" onclick="ativarSolSus()">
+                    <div class="indicador onze"></div>
+                </div>
+                <div class="tecla sus" id="laSustenido" onclick="ativarLaSus()">
+                    <div class="indicador doze"></div>
+                </div>
+            </div>
+        </div>
+        <button id="botao" class="btn" onclick="analisarEscala()">
+            <p>Confirmar</p>
+        </button>
+        <div class="Msg">
+            <p style="font-size: 22px; color: white;" id="escala"></p>
+            <p style="color: #FFFF;" id="resultado"></p>
+
+        </div>
+        <div id="mensagem" style="color: white;">
+        </div>
+
+    </div>
+
+    <div id="resto" class="paiCont">
+        <div class="paiContAlt">
+            <div class="circulosPai">
+                <div class="paiKpi">
+                    <p>Acertos</p>
+
+                    <div class="circulo acertos" id="seusAcertos"></div>
+                </div>
+                <div class="paiKpi">
+                    <p>Erros</p>
+                    <div class="circulo erros" id="seusErros"></div>
+                </div>
+            </div>
+            <div id="tabela">
+                <div class="tabelaAlign">
+                    <p class="cardText">Pontuação</p>
+                    <div class="item">
+                        <p id="contagem"></p>
+                    </div>
+                    <div class="item">
+                        <p id="errosDiv" style="color: white;"></p>
+                    </div>
+                    <div class="item">
+                        <p id="acertosDiv"></p>
+                    </div>
+                </div>
+                <div class="tabelaAlign">
+                    <p class="cardText">Ranking</p>
+                    <div class="item">
+                        <p id="colocacao1"></p>
+                    </div>
+                    <div class="item">
+                        <p id="colocacao2"></p>
+                    </div>
+                    <div class="item">
+                        <p id="colocacao3"></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="skip" onclick="carrousel()">
+            <p class="next">></p>
+        </div>
+        <div class="cont alt">
+
+            <div class="slide" id="imgs">
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div>
+                    <canvas id="myChart2"></canvas>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- </div>
+    <button onclick="analisarEscala()">ver</button>
+    <button onclick="analisarAcordesMaiores()">acordes maiores</button>
+    <button onclick="analisarEscala()">ver</button>
+    <button onclick="analisarEscala()">ver</button> -->
+
+</body>
+
+</html>
+<script>
+   
+   
+    var validateCad = false
+    const imgs = document.getElementById('imgs')
+    const img = document.querySelectorAll('#imgs canvas')
+    const skip = document.querySelector('.next')
+    let idx = 0
+    function carrousel() {
+        console.log('oi')
+        idx++
+        if (idx == 1) {
+            skip.style.transform = `scaleX(-1)`
+        } else {
+            skip.style.transform = `scaleX(1)`
+
+        }
+        if (idx == 2) {
+            idx = 0
+        }
+        imgs.style.transform = `translateX(${- idx * 335}px )`
+    }
+
+    function modalLivre() {
+        var principal = document.querySelector('.cont')
+        var secundario = document.querySelector('.paiCont')
+        principal.classList.toggle('full')
+        secundario.classList.toggle('invisible')
+        sus.classList.toggle('full')
+        texto1.classList.toggle('full')
+        texto2.classList.toggle('full')
+        botao.classList.toggle('full')
+
+    }
+
+    var color = sessionStorage.COR_USUARIO
+    var ind1 = document.querySelector('.indicador.um')
+    var ind2 = document.querySelector('.indicador.dois')
+    var ind3 = document.querySelector('.indicador.tres')
+    var ind4 = document.querySelector('.indicador.quatro')
+    var ind5 = document.querySelector('.indicador.cinco')
+    var ind6 = document.querySelector('.indicador.seis')
+    var ind7 = document.querySelector('.indicador.sete')
+    var ind8 = document.querySelector('.indicador.oito')
+    var ind9 = document.querySelector('.indicador.nove')
+    var ind10 = document.querySelector('.indicador.dez')
+    var ind11 = document.querySelector('.indicador.onze')
+    var ind12 = document.querySelector('.indicador.doze')
+    ind1.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+    ind2.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+    ind3.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+    ind3.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+    ind4.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+    ind5.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+    ind6.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+    ind7.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+    ind8.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+    ind9.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+    ind10.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+    ind11.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+    ind12.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+    corpo.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+    botao.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+
+    function mudarCor() {
+        color = cor.value
+        sessionStorage.COR_USUARIO = color
+        attGrafico()
+
+        corpo.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+        botao.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+        ind1.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+        ind2.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+        ind3.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+        ind3.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+        ind4.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+        ind5.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+        ind6.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+        ind7.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+        ind8.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+        ind9.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+        ind10.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+        ind11.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+        ind12.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+        corpo.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+        botao.style.backgroundColor = `${sessionStorage.COR_USUARIO}`
+
+
+
+
+        fetch("/usuarios/mudarCor", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                corServer: color,
+                idServer: sessionStorage.ID_USUARIO,
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+
+
+                resposta.json().then(json => {
+                    console.log(json);
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao mudar a cor!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function nivelUser(acr){
+
+if(acr < 10) {
+                nvl.innerHTML = `
+                <p>Nivel: 1<\p>
+                <div class="w3-border" style="heigth: 25px; border: 0px solid black; background-color: #d4d4d4; border-radius: 5px;">
+<div class="w3-grey" style="height:24px;width: ${acr}0%; border-radius: 5px 0px 0px 5px; background-color: ${sessionStorage.COR_USUARIO};"></div>  </div> <p style = "font-size: 14px">${(acr - 10) * -1} pontos para o proximo nível<\p>`
+
+            }
+if(acr >= 10) {
+                nvl.innerHTML = `
+                <p>Nivel: 2<\p>
+                <div class="w3-border" style="heigth: 25px; border: 0px solid black; background-color: #d4d4d4; border-radius: 5px;">
+<div class="w3-grey" style="height:24px;width: ${ (acr / 2).toFixed(0)}0%; border-radius: 5px 0px 0px 5px; background-color: ${sessionStorage.COR_USUARIO};"></div>  </div> <p style = "font-size: 14px">${(acr - 20) * -1} pontos para o proximo nível<\p>`
+
+            }
+if(acr >= 20) {
+                nvl.innerHTML = `
+                <p>Nivel: 3<\p>
+                <div class="w3-border" style="heigth: 25px; border: 0px solid black; background-color: #d4d4d4; border-radius: 5px;">
+<div class="w3-grey" style="height:24px;width: ${ (acr / 4).toFixed(0)}0%; border-radius: 5px 0px 0px 5px; background-color: ${sessionStorage.COR_USUARIO};"></div>  </div> <p style = "font-size: 14px">${(acr - 40) * -1} pontos para o proximo nível<\p>`
+
+            }
+if(acr >= 40) {
+                nvl.innerHTML = `
+                <p>Nivel: 4<\p>
+                <div class="w3-border" style="heigth: 25px; border: 0px solid black; background-color: #d4d4d4; border-radius: 5px;">
+<div class="w3-grey" style="height:24px;width: ${ (acr / 6).toFixed(0)}0%; border-radius: 5px 0px 0px 5px; background-color: ${sessionStorage.COR_USUARIO};"></div>  </div> <p style = "font-size: 14px">${(acr - 60) * -1} pontos para o proximo nível<\p>`
+
+            }
+if(acr >= 60) {
+                nvl.innerHTML = `
+                <p>Nivel: 5<\p>
+                <div class="w3-border" style="heigth: 25px; border: 0px solid black; background-color: #d4d4d4; border-radius: 5px;">
+<div class="w3-grey" style="height:24px;width: ${ (acr / 8).toFixed(0)}0%; border-radius: 5px 0px 0px 5px; background-color: ${sessionStorage.COR_USUARIO};"></div> </div> <p style = "font-size: 14px">${(acr - 80) * -1} pontos para o proximo nível<\p>
+`
+ 
+            }
+if(acr >= 80) {
+                nvl.innerHTML = `
+                <p>Nivel: 6<\p>
+                <div class="w3-border" style="heigth: 25px; border: 0px solid black; background-color: #d4d4d4; border-radius: 5px;">
+<div class="w3-grey" style="height:24px;width: ${ (acr / 10).toFixed(0)}0%; border-radius: 5px 0px 0px 5px; background-color: ${sessionStorage.COR_USUARIO};"></div>  </div> <p style = "font-size: 14px">${(acr - 100) * -1} pontos para o proximo nível<\p>`
+
+            }
+if(acr > 100) {
+                nvl.innerHTML = `
+                <p>Nivel: 7<\p>
+                <div class="w3-border" style="heigth: 25px; border: 0px solid black; oveerflow: hidden; background-color: #d4d4d4; border-radius: 5px;">
+<div class="w3-grey" style="height:24px;width: 100%; border-radius: 5px; background-color: ${sessionStorage.COR_USUARIO};"></div>`
+
+            }
+}
+
+
+
+    var escalas = ['Dó', 'Ré', 'Mi', "Fá", 'Sol', 'Lá', 'Sí', 'Dó#', 'Ré#', 'Fá#', 'Sol#', 'Lá#']
+    var escalaPassada = []
+    var ativoDo = false
+    var ativoDoSus = false
+    var ativoRe = false
+    var ativoReSus = false
+    var ativoMi = false
+    var ativoFa = false
+    var ativoFaSus = false
+    var ativoSol = false
+    var ativoSolSus = false
+    var ativoLa = false
+    var ativoLaSus = false
+    var ativoSi = false
+    var escDo = false
+    var escRe = false
+    var escMi = false
+    var escFa = false
+    var escSol = false
+    var escLa = false
+    var escSi = false
+    var escDoSus = false
+    var escReSus = false
+    var escFaSus = false
+    var escSolSus = false
+    var escLaSus = false
+    var erros = 0
+    var acertos = 0
+    var errosDo = 0
+    var acertosDo = 0
+    var errosRe = 0
+    var acertosRe = 0
+    var errosMi = 0
+    var acertosMi = 0
+    var errosFa = 0
+    var acertosFa = 0
+    var errosSol = 0
+    var acertosSol = 0
+    var errosLa = 0
+    var acertosLa = 0
+    var errosSi = 0
+    var acertosSi = 0
+    var errosDoSus = 0
+    var acertosDoSus = 0
+    var errosReSus = 0
+    var acertosReSus = 0
+    var errosFaSus = 0
+    var acertosFaSus = 0
+    var errosSolSus = 0
+    var acertosSolSus = 0
+    var errosLaSus = 0
+    var acertosLaSus = 0
+    var contador = -1
+    var umErro;
+    var doisErro;
+    var tresErro;
+    var quatroErro;
+    var cincoErro;
+    var umErroN;
+    var doisErroN;
+    var tresErroN;
+    var quatroErroN;
+    var cincoErroN;
+    var umAcertos;
+    var doisAcertos;
+    var tresAcertos;
+    var quatroAcertos;
+    var cincoAcertos;
+    var umAcertosN;
+    var doisAcertosN;
+    var tresAcertosN;
+    var quatroAcertosN;
+    var cincoAcertosN;
+
+
+    const ctx = document.getElementById('myChart');
+    const ctx2 = document.getElementById('myChart2');
+    var acertoChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [umErro, doisErro, tresErro, quatroErro, cincoErro],
+            datasets: [{
+                label: 'ESCALAS QUE VOCÊ MAIS ERRA',
+                data: [umErroN, doisErroN, tresErroN, quatroErroN, cincoErroN],
+                backgroundColor: `${color}`,
+                borderColor: 'white',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: 'white'
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: 'white'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: 'white',
+
+                    }
+                },
+                title: {
+                    color: 'white'
+                },
+                tooltip: {
+                    titleColor: 'white',
+                    size: 22,
+                    bodyColor: 'white'
+                }
+            }
+        }
+    });
+    var ErroChart = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: [umAcertos, doisAcertos, tresAcertos, quatroAcertos, cincoAcertos],
+            datasets: [{
+                label: 'ESCALAS QUE VOCÊ MAIS ACERTOU',
+                data: [umAcertosN, doisAcertosN, tresAcertosN, quatroAcertosN, cincoAcertosN],
+                backgroundColor: `${color}`,
+                borderColor: 'white',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: 'white'
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: 'white'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: 'white'
+                    }
+                },
+                title: {
+                    color: 'white'
+                },
+                tooltip: {
+                    titleColor: 'white',
+                    bodyColor: 'white'
+                }
+            }
+        }
+    });
+
+
+
+    function listar() {
+
+
+        fetch("/notas/listar", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    primeiro = json.primeiroLugar
+                    primeiroPonto = json.primeiroLugarPt
+                    segundo = json.segundoLugar
+                    segundoPonto = json.segundoLugarPt
+                    terceiro = json.terceiroLugar
+                    terceiroPonto = json.terceiroLugarPt
+
+                    colocacao1.innerHTML = `1° ${primeiro} | ${primeiroPonto} Pts`
+                    colocacao2.innerHTML = `2° ${segundo} | ${segundoPonto} Pts`
+                    colocacao3.innerHTML = `3° ${terceiro} | ${terceiroPonto} Pts`
+
+
+
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+    function mynotes() {
+
+
+        fetch("/notas/mynotes", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idServer: sessionStorage.ID_USUARIO,
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar das kpis()!")
+
+            if (resposta.ok) {
+
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    acertive = json.seusAcertos
+                    errative = json.seusErros
+                    nivelUser(acertive)
+                    console.log(`acertos ${acertive}`)
+
+
+                    seusAcertos.innerHTML = `${acertive}`
+                    seusErros.innerHTML = `${errative}`
+                    return acertive
+                    var acr = json.seusAcertos
+                    
+                });
+
+            } else {
+
+                console.log("Houve um erro ao trazer os erros e acertos!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+ 
+    function mynoteserro() {
+
+
+        fetch("/notas/mynoteserro", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idServer: sessionStorage.ID_USUARIO,
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    umErro = json.um
+                    umErroN = json.umN
+                    doisErro = json.dois
+                    doisErroN = json.doisN
+                    tresErro = json.tres
+                    tresErroN = json.tresN
+                    quatroErro = json.quatro
+                    quatroErroN = json.quatroN
+                    cincoErro = json.cinco
+                    cincoErroN = json.cincoN
+
+
+
+
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+
+    }
+    function mynotesacertos() {
+
+
+        fetch("/notas/mynotesacertos", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idServer: sessionStorage.ID_USUARIO,
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    umAcertos = json.um
+                    umAcertosN = json.umN
+                    doisAcertos = json.dois
+                    doisAcertosN = json.doisN
+                    tresAcertos = json.tres
+                    tresAcertosN = json.tresN
+                    quatroAcertos = json.quatro
+                    quatroAcertosN = json.quatroN
+                    cincoAcertos = json.cinco
+                    cincoAcertosN = json.cincoN
+
+
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+
+    }
+    function modalPref() {
+        var pref = document.getElementById('preferencias')
+
+
+        pref.classList.toggle('invisible')
+
+
+
+
+    }
+
+    function attGrafico() {
+        ErroChart.destroy()
+        acertoChart.destroy()
+        setTimeout(() => {
+
+            ErroChart = new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: [umAcertos, doisAcertos, tresAcertos, quatroAcertos, cincoAcertos],
+                    datasets: [{
+                        label: 'ESCALAS QUE VOCÊ MAIS ACERTA',
+                        data: [umAcertosN, doisAcertosN, tresAcertosN, quatroAcertosN, cincoAcertosN],
+                        backgroundColor: `${color}`,
+                        borderColor: 'white',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                color: 'white'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: 'white'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'white'
+                            }
+                        },
+                        title: {
+                            color: 'white'
+                        },
+                        tooltip: {
+                            titleColor: 'white',
+                            bodyColor: 'white'
+                        }
+                    }
+                }
+            });
+
+
+            acertoChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [umErro, doisErro, tresErro, quatroErro, cincoErro],
+                    datasets: [{
+                        label: 'ESCALAS QUE VOCÊ MAIS ERRA',
+                        data: [umErroN, doisErroN, tresErroN, quatroErroN, cincoErroN],
+                        backgroundColor: `${color}`,
+                        borderColor: 'white',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                color: 'white'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: 'white'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'white',
+
+                            }
+                        },
+                        title: {
+                            color: 'white'
+                        },
+                        tooltip: {
+                            titleColor: 'white',
+                            size: 22,
+                            bodyColor: 'white'
+                        }
+                    }
+                }
+            });
+        }, 500)
+
+
+    }
+
+
+    function cadastrar() {
+        var act = acertos
+
+        // Enviando o valor da nova input
+        fetch("/notas/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                acertosServer: act,
+                errosServer: erros,
+                do: acertosDo,
+                re: acertosRe,
+                mi: acertosMi,
+                fa: acertosFa,
+                sol: acertosSol,
+                la: acertosLa,
+                si: acertosSi,
+                doSus: acertosDoSus,
+                reSus: acertosReSus,
+                faSus: acertosFaSus,
+                solSus: acertosSolSus,
+                laSus: acertosLaSus,
+                edo: errosDo,
+                ere: errosRe,
+                emi: errosMi,
+                efa: errosFa,
+                esol: errosSol,
+                ela: errosLa,
+                esi: errosSi,
+                edoSus: errosDoSus,
+                ereSus: errosReSus,
+                efaSus: errosFaSus,
+                esolSus: errosSolSus,
+                elaSus: errosLaSus,
+                idServer: sessionStorage.ID_USUARIO
+
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+
+                    console.log("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+                    validateCad = true
+
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+
+        return false;
+    }
+
+
+    function ativarDo() {
+        const tecla = document.querySelector('#dó');
+        tecla.classList.toggle('ativo');
+        if (ativoDo) {
+            ativoDo = false
+        } else {
+            ativoDo = true
+
+        }
+    }
+    function ativarRe() {
+        const tecla = document.querySelector('#ré');
+        tecla.classList.toggle('ativo');
+        if (ativoRe) {
+            ativoRe = false
+        } else {
+            ativoRe = true
+
+        }
+    }
+    function ativarMi() {
+        const tecla = document.querySelector('#mi');
+        tecla.classList.toggle('ativo');
+        if (ativoMi) {
+            ativoMi = false
+        } else {
+            ativoMi = true
+
+        }
+    }
+    function ativarFa() {
+        const tecla = document.querySelector('#fa');
+        tecla.classList.toggle('ativo');
+        if (ativoFa) {
+            ativoFa = false
+        } else {
+            ativoFa = true
+
+        }
+    }
+    function ativarSol() {
+        const tecla = document.querySelector('#sol');
+        tecla.classList.toggle('ativo');
+        if (ativoSol) {
+            ativoSol = false
+        } else {
+            ativoSol = true
+
+        }
+    }
+    function ativarLa() {
+        const tecla = document.querySelector('#la');
+        tecla.classList.toggle('ativo');
+        if (ativoLa) {
+            ativoLa = false
+        } else {
+            ativoLa = true
+
+        }
+    }
+    function ativarSi() {
+        const tecla = document.querySelector('#si');
+        tecla.classList.toggle('ativo');
+        if (ativoSi) {
+            ativoSi = false
+        } else {
+            ativoSi = true
+
+        }
+    }
+    function ativarDoSus() {
+        const tecla = document.querySelector('#dóSustenido');
+        tecla.classList.toggle('ativoDois');
+        if (ativoDoSus) {
+            ativoDoSus = false
+        } else {
+            ativoDoSus = true
+
+        }
+    }
+    function ativarReSus() {
+        const tecla = document.querySelector('#réSustenido');
+        tecla.classList.toggle('ativoDois');
+        if (ativoReSus) {
+            ativoReSus = false
+        } else {
+            ativoReSus = true
+
+        }
+    }
+    function ativarFaSus() {
+        const tecla = document.querySelector('#faSustenido');
+        tecla.classList.toggle('ativoDois');
+        if (ativoFaSus) {
+            ativoFaSus = false
+        } else {
+            ativoFaSus = true
+
+        }
+    }
+    function ativarSolSus() {
+        const tecla = document.querySelector('#solSustenido');
+        tecla.classList.toggle('ativoDois');
+        if (ativoSolSus) {
+            ativoSolSus = false
+        } else {
+            ativoSolSus = true
+
+        }
+    }
+    function ativarLaSus() {
+        const tecla = document.querySelector('#laSustenido');
+        tecla.classList.toggle('ativoDois');
+        if (ativoLaSus) {
+            ativoLaSus = false
+        } else {
+            ativoLaSus = true
+
+        }
+    }
+
+    function analisarAcordesMaiores() {
+
+        if (ativoDo == true && ativoDoSus == false && ativoRe == false && ativoReSus == false && ativoMi == true && ativoFa == false && ativoFaSus == false && ativoSol == true && ativoSolSus == false && ativoLa == false && ativoLaSus == false && ativoSi == false) {
+            mensagem.innerHTML = `acorde maior de dó`
+
+        }
+        else if (ativoDo == false && ativoDoSus == true && ativoRe == false && ativoReSus == false && ativoMi == false && ativoFa == true && ativoFaSus == false && ativoSol == false && ativoSolSus == true && ativoLa == false && ativoLaSus == false && ativoSi == false) {
+            mensagem.innerHTML = `acorde maior de dó sustenido`
+        }
+        else if (ativoDo == false && ativoDoSus == false && ativoRe == true && ativoReSus == false && ativoMi == false && ativoFa == false && ativoFaSus == true && ativoSol == false && ativoSolSus == false && ativoLa == true && ativoLaSus == false && ativoSi == false) {
+            mensagem.innerHTML = `acorde maior de ré`
+
+        }
+        else if (ativoDo == false && ativoDoSus == false && ativoRe == false && ativoReSus == false && ativoMi == true && ativoFa == false && ativoFaSus == false && ativoSol == false && ativoSolSus == true && ativoLa == false && ativoLaSus == false && ativoSi == true) {
+            mensagem.innerHTML = `acorde maior de mi`
+        }
+        else if (ativoDo == true && ativoDoSus == false && ativoRe == false && ativoReSus == false && ativoMi == false && ativoFa == true && ativoFaSus == false && ativoSol == false && ativoSolSus == false && ativoLa == true && ativoLaSus == false && ativoSi == false) {
+            mensagem.innerHTML = `acorde maior de fá`
+        }
+        else if (ativoDo == false && ativoDoSus == true && ativoRe == false && ativoReSus == false && ativoMi == false && ativoFa == false && ativoFaSus == true && ativoSol == false && ativoSolSus == false && ativoLa == false && ativoLaSus == true && ativoSi == false) {
+            mensagem.innerHTML = `acorde maior de fá sustenido`
+        }
+        else if (ativoDo == false && ativoDoSus == false && ativoRe == true && ativoReSus == false && ativoMi == false && ativoFa == false && ativoFaSus == false && ativoSol == true && ativoSolSus == false && ativoLa == false && ativoLaSus == false && ativoSi == true) {
+            mensagem.innerHTML = `acorde maior de sol`
+        }
+        else if (ativoDo == true && ativoDoSus == false && ativoRe == false && ativoReSus == true && ativoMi == false && ativoFa == false && ativoFaSus == false && ativoSol == false && ativoSolSus == true && ativoLa == false && ativoLaSus == false && ativoSi == false) {
+            mensagem.innerHTML = `acorde maior de sol sustenido`
+        }
+        else if (ativoDo == false && ativoDoSus == true && ativoRe == false && ativoReSus == false && ativoMi == true && ativoFa == false && ativoFaSus == false && ativoSol == false && ativoSolSus == false && ativoLa == true && ativoLaSus == false && ativoSi == false) {
+            mensagem.innerHTML = `acorde maior de lá`
+        }
+        else if (ativoDo == false && ativoDoSus == false && ativoRe == true && ativoReSus == false && ativoMi == false && ativoFa == true && ativoFaSus == false && ativoSol == false && ativoSolSus == false && ativoLa == false && ativoLaSus == true && ativoSi == false) {
+            mensagem.innerHTML = `acorde maior de lá sustenido`
+        }
+        else if (ativoDo == false && ativoDoSus == false && ativoRe == false && ativoReSus == true && ativoMi == false && ativoFa == false && ativoFaSus == true && ativoSol == false && ativoSolSus == false && ativoLa == false && ativoLaSus == false && ativoSi == true) {
+            mensagem.innerHTML = `acorde maior de si`
+        }
+        else if (ativoDo == false && ativoDoSus == false && ativoRe == false && ativoReSus == true && ativoMi == false && ativoFa == false && ativoFaSus == false && ativoSol == true && ativoSolSus == false && ativoLa == false && ativoLaSus == true && ativoSi == false) {
+            mensagem.innerHTML = `acorde maior de ré sustenido`
+        }
+
+
+    }
+
+    function limparBol() {
+        escDo = false
+        escRe = false
+        escMi = false
+        escFa = false
+        escSol = false
+        escLa = false
+        escSi = false
+        escDoSus = false
+        escReSus = false
+        escFaSus = false
+        escSolSus = false
+        escLaSus = false
+
+    }
+
+    function analisarEscala() {
+        console.log(contador)
+        console.log(escFaSus);
+
+        contador++
+
+        setTimeout(limparBol(), 3000)
+
+
+        if (ativoDo == true && ativoRe == true && ativoMi == true && ativoFa == true && ativoSol == true && ativoSi == true && ativoDoSus == false && ativoReSus == false && ativoFaSus == false && ativoSolSus == false && ativoLaSus == false) {
+            escDo = true
+            mensagem.innerHTML = `escala de dó`
+
+        }
+        else if (ativoDoSus == true && ativoReSus == true && ativoFa == true && ativoFaSus == true && ativoSolSus == true && ativoLaSus == true && ativoDo == true && ativoRe == false && ativoMi == false && ativoSol == false && ativoLa == false && ativoSi == false) {
+            mensagem.innerHTML = `escala de dó sustenido`
+            escDoSus = true
+
+        }
+        else if (ativoRe == true && ativoMi == true && ativoFaSus == true && ativoSol == true && ativoLa == true && ativoSi == true && ativoDoSus == true && ativoDo == false && ativoFa == false && ativoReSus == false && ativoSolSus == false && ativoLaSus == false) {
+            mensagem.innerHTML = `escala de ré`
+            escRe = true
+
+        }
+        else if (ativoReSus == true && ativoFa == true && ativoSol == true && ativoSolSus == true && ativoLaSus == true && ativoDo == true && ativoRe == true && ativoFaSus == false && ativoSi == false && ativoLa == false && ativoDoSus == false && ativoMi == false) {
+            mensagem.innerHTML = `escala de ré sustenido`
+            escReSus = true
+
+        }
+        else if (ativoMi == true && ativoFaSus == true && ativoSolSus == true && ativoLa == true && ativoSi == true && ativoDoSus == true && ativoReSus == true && ativoRe == false && ativoDo == false && ativoSol == false && ativoLaSus == false && ativoFa == false) {
+            mensagem.innerHTML = `escala de mi`
+            escMi = true
+
+        }
+        else if (ativoFa == true && ativoSol == true && ativoLa == true && ativoLaSus == true && ativoDo == true && ativoRe == true && ativoMi == true && ativoFaSus == false && ativoReSus == false && ativoSolSus == false && ativoDoSus == false && ativoSi == false) {
+            mensagem.innerHTML = `escala de Fa`
+            escFa = true
+
+        }
+        else if (ativoFaSus == true && ativoSolSus == true && ativoLaSus == true && ativoSi == true && ativoDoSus == true && ativoReSus == true && ativoFa == true && ativoMi == false && ativoRe == false && ativoDo == false && ativoSol == false && ativoLa == false) {
+            mensagem.innerHTML = `escala de Fa sustenido`
+            escFaSus = true
+
+        }
+        else if (ativoSol == true && ativoLa == true && ativoSi == true && ativoDo == true && ativoRe == true && ativoMi == true && ativoFaSus == true && ativoFa == false && ativoReSus == false && ativoSolSus == false && ativoLaSus == false && ativoDoSus == false) {
+            mensagem.innerHTML = `escala de sol`
+            escSol = true
+
+        }
+        else if (ativoSolSus == true && ativoLaSus == true && ativoDo == true && ativoDoSus == true && ativoReSus == true && ativoFa == true && ativoSol == true && ativoFaSus == false && ativoMi == false && ativoLa == false && ativoSi == false && ativoRe == false) {
+            mensagem.innerHTML = `escala de sol sustenido`
+            escSolSus = true
+
+        }
+        else if (ativoLa == true && ativoSi == true && ativoDoSus == true && ativoRe == true && ativoMi == true && ativoFaSus == true && ativoSolSus == true && ativoSol == false && ativoFa == false && ativoReSus == false && ativoDo == false && ativoLaSus == false) {
+            mensagem.innerHTML = `escala de Lá`
+            escLa = true
+
+        }
+        else if (ativoLaSus == true && ativoDo == true && ativoRe == true && ativoReSus == true && ativoFa == true && ativoSol == true && ativoLa == true && ativoSolSus == false && ativoFaSus == false && ativoMi == false && ativoSi == false && ativoDoSus == false) {
+            mensagem.innerHTML = `escala de Lá sustenido`
+            escLaSus = true
+
+        }
+        else if (ativoSi == true && ativoDoSus == true && ativoReSus == true && ativoMi == true && ativoFaSus == true && ativoSolSus == true && ativoLaSus == true && ativoLa == false && ativoSol == false && ativoFa == false && ativoDo == false && ativoRe == false) {
+            mensagem.innerHTML = `escala de Si`
+            escSi = true
+
+        } else {
+            mensagem.innerHTML = `escala invalida, lembre-se que umas escala tem 7 notas`
+        }
+
+        var numRandom = Math.random() * 11
+        var num = numRandom.toFixed()
+        var notaAtual = escalas[num]
+        escalaPassada.push(notaAtual)
+        var notaPassada = escalaPassada[escalaPassada.length - 2]
+        console.log(notaPassada)
+
+
+
+        if (contador <= 10) {
+            if (notaPassada == "Dó") {
+                if (escDo == true) {
+                    console.log("acertou")
+                    resultado.innerHTML = `Acertos  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    acertos++
+                    acertosDo++
+                } else {
+                    resultado.innerHTML = `Erros  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    erros++
+                    errosDo++
+
+
+
+                }
+
+
+            } else if (notaPassada == 'Ré') {
+                if (escRe == true) {
+                    resultado.innerHTML = `Acertos  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    acertos++
+                    acertosRe++
+
+                } else {
+                    resultado.innerHTML = `Erros  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    erros++
+                    errosRe++
+
+
+
+                }
+            } else if (notaPassada == 'Mi') {
+                if (escMi == true) {
+                    resultado.innerHTML = `Acertos  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    acertos++
+                    acertosMi++
+
+                } else {
+                    resultado.innerHTML = `Erros  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    erros++
+                    errosMi++
+
+
+
+                }
+            } else if (notaPassada == 'Fá') {
+                if (escFa == true) {
+                    resultado.innerHTML = `Acertos  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    acertos++
+                    acertosFa++
+
+                } else {
+                    resultado.innerHTML = `Erros  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    erros++
+                    errosFa++
+
+
+
+                }
+            } else if (notaPassada == 'Sol') {
+                if (escSol == true) {
+                    resultado.innerHTML = `Acertos  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    acertos++
+                    acertosSol++
+
+                } else {
+                    resultado.innerHTML = `Erros  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    erros++
+                    errosSol++
+
+
+
+                }
+            } else if (notaPassada == 'Lá') {
+                if (escLa == true) {
+                    resultado.innerHTML = `Acertos  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    acertos++
+                    acertosLa++
+
+                } else {
+                    resultado.innerHTML = `Erros  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    erros++
+                    errosLa++
+
+
+
+                }
+            } else if (notaPassada == 'Sí') {
+                if (escSi == true) {
+                    resultado.innerHTML = `Acertos  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    acertos++
+                    acertosSi++
+
+                } else {
+                    resultado.innerHTML = `Erros  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    erros++
+                    errosSi++
+
+
+
+                }
+            } else if (notaPassada == 'Dó#') {
+                if (escDoSus == true) {
+                    resultado.innerHTML = `Acertos  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    acertos++
+                    acertosDoSus++
+
+                } else {
+                    resultado.innerHTML = `Erros  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    erros++
+                    errosDoSus++
+                }
+            } else if (notaPassada == 'Ré#') {
+                if (escReSus == true) {
+                    resultado.innerHTML = `Acertos  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    acertos++
+                    acertosReSus++
+
+                } else {
+                    resultado.innerHTML = `Erros  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    erros++
+                    errosReSus++
+                }
+            } else if (notaPassada == 'Fá#') {
+                if (escFaSus == true) {
+                    resultado.innerHTML = `Acertos  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    acertos++
+                    acertosFaSus++
+
+                } else {
+                    resultado.innerHTML = `Erros  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    erros++
+                    errosFaSus++
+                }
+            } else if (notaPassada == 'Sol#') {
+                if (escSolSus == true) {
+                    resultado.innerHTML = `Acertos  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    acertos++
+                    acertosSolSus++
+
+                } else {
+                    resultado.innerHTML = `Erros  <span style = "font-size: 1.5rem";>+1 </span>`
+
+                    erros++
+                    errosSolSus
+                }
+            } else if (notaPassada == 'Lá#') {
+                if (escLaSus == true) {
+                    resultado.innerHTML = `Acertos  <span style = "font-size: 1.5rem";>+1 </span>`
+                    acertos++
+                    acertosLaSus++
+
+
+                } else {
+                    resultado.innerHTML = `Erros  <span style = "font-size: 1.5rem";>+1 </span>`
+                    erros++
+                    errosLaSus
+                }
+            }
+
+        }
+        if(contador > 10) {
+        }
+        if (contador == 0) {
+            mensagem.innerHTML = ""
+        }
+        if (contador > 10) {
+            contador = 0
+
+        console.log("Entrei no if de cadastrar")
+            cadastrar()
+
+            console.log("Exibindo valores")
+            setTimeout(()=>{
+                mynotes()
+            attGrafico()
+
+            }, 1000)
+            erros = 0
+            errosDo = 0
+            errosRe = 0
+            errosMi = 0
+            errosFa = 0
+            errosSol = 0
+            errosLa = 0
+            errosSi = 0
+            errosFaSus = 0
+            errosSolSus = 0
+            errosDoSus = 0
+            errosReSus = 0
+            errosLaSus = 0
+            acertosDo = 0
+            acertosRe = 0
+            acertosMi = 0
+            acertosFa = 0
+            acertosSol = 0
+            acertosLa = 0
+            acertosSi = 0
+            acertosFaSus = 0
+            acertosSolSus = 0
+            acertosDoSus = 0
+            acertosReSus = 0
+            acertosLaSus = 0
+            acertos = 0
+
+
+
+
+
+            resultado.innerHTML = `Acabou, se deseja começar de novo aperte o botão acima`
+
+            contador = 0
+
+
+        }
+        escala.innerHTML = `Escala de <b>${notaAtual}</b>`
+
+        contagem.innerHTML = `${contador}/10`
+        errosDiv.innerHTML = `Erros ${erros}`
+        acertosDiv.innerHTML = ` Acertos ${acertos}`
+        console.log('contador' + contador)
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+</script>
