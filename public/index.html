@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Musical Logic</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./styleHome.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,9 +56,7 @@
 
             <div class="textos">
                 <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias tempora culpa nisi non cumque
-                    corporis vel maiores incidunt atque debitis impedit dolorem minima recusandae sint sit esse, optio
-                    accusamus necessitatibus?
+                   A Musical Logic vai te ensinar escalas musicais de uma maneira fácil, divertida, eficaz e gratuita. Cadastre-se agora para ter acesso aos nossos benefícios exclusivos! Aprender música nunca foi tão acessível e prazeroso. Não perca essa oportunidade de aprimorar suas habilidades musicais e explorar todo o potencial da sua criatividade. descubra um novo mundo de possibilidades musicais!
                 </p>
             </div>
 
@@ -67,29 +66,75 @@
             </div>
         </div>
     </section>
+    <audio autoplay>
+        <source src="assets/download.mp3" type="audio/mp3">
+     
+      </audio>
     <section class="sec two" id="dois">
         <div class="textoAbsolute" id="textoAlign">
-            <p class="titulo">Beneficios</p>
-            <p class="subtitulo">Da musica</p>
+            <p class="titulo">Benefícios</p>
+            <p class="subtitulo">Da música</p>
         </div>
         <div class="alignCircle">
             <div class="alignColumn">
-                <div class="circulo" onclick="modalCircle()" id="circles"><p class="textoNor textoDis" id="titulo" style="font-size: 22px; font-weight: 500;">Titulo 1</p><p class="textoNor textoDis" id="textoCirculo1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor eligendi ea officiis, tempora debitis cum veritatis. Cumque adipisci a quia impedit quas corrupti assumenda autem, nisi cum dicta accusamus. Quam!</p></div>
-                <p>beneficio 1</p>
+                <div class="circulo" onclick="modalCircle()" id="circles"><p class="textoNor textoDis" id="titulo" style="font-size: 18px; font-weight: 500;">Desenvolvimento cognitivo</p><p class="textoNor textoDis" id="textoCirculo1">A música pode melhorar habilidades cognitivas, como memória, atenção e habilidades de resolução de problemas. tocar envolve muitos processos, como leitura de partituras, reconhecimento de padrões e coordenação motora.</p></div>
+                <p>Benefício 1</p>
             </div>
             <div class="alignColumn">
-                <div class="circulo" onclick="modalCircle2()" id="circles2"></div>
-                <p>beneficio 1</p>
+                <div class="circulo" onclick="modalCircle2()" id="circles2"><p class="textoNor textoDis" id="titulo2" style="font-size: 18px; font-weight: 500;">Redução do estresse</p><p class="textoNor textoDis" id="textoCirculo2">Tocar um instrumento pode ser uma forma eficaz de aliviar o estresse e a ansiedade. A música tem o poder de acalmar a mente, reduzir a pressão sanguínea e promover a liberação de endorfinas, os "hormônios da felicidade".</p></div>
+                <p>Benefício 2</p>
             </div>
             <div class="alignColumn">
-                <div class="circulo" onclick="modalCircle3()" id="circles3"></div>
-                <p>beneficio 1</p>
+                <div class="circulo" onclick="modalCircle3()" id="circles3"><p class="textoNor textoDis" id="titulo3" style="font-size: 18px; font-weight: 500;">Estímulo da criatividade</p><p class="textoNor textoDis" id="textoCirculo3">: A prática musical encoraja a expressão individual e a experimentação. Compor músicas, improvisar e interpretar peças de diferentes estilos incentivam a criatividade e a imaginação.</p></div>
+                <p>Benefício 3</p>
             </div>
             <div class="alignColumn">
-                <div class="circulo" onclick="modalCircle4()" id="circles4"></div>
-                <p>beneficio 1</p>
+                <div class="circulo" onclick="modalCircle4()" id="circles4"><p class="textoNor textoDis" id="titulo4" style="font-size: 18px; font-weight: 500;">Melhoria da autoestima</p><p class="textoNor textoDis" id="textoCirculo4">Dominar um instrumento ou desenvolver habilidades vocais pode aumentar a autoconfiança e a autoestima de uma pessoa. O senso de realização ao alcançar metas musicais, como aprender uma nova música ou se apresentar em público, pode ser imensamente gratificante.</p></div>
+                <p>Benefício 4</p>
             </div>
 
+        </div>
+    </section>
+    <section class="sec four">
+        <div class="gradiente"></div>
+      
+        <div class="alignAbout"> 
+        <img src="/assets/skeleton.png" alt="" class="imgPessoa">
+ 
+          <div class="aboutUs">
+             <p class="texto" style="font-size: 42px; font-weight: 400;">Oi, eu sou</p>
+             <p class="alt" style="font-size: 62px; height: 64px;">Samuel luciano</p>
+             <p class="texto" style=" font-weight: 400; height: 42px;">Sou desenvolvedor e músico, tenho conhecimento musical há mais de 4 anos e sou professor de piano. Toco piano, guitarra, baixo e violão, e tenho o conhecimento necessário para fazer você mudar sua visão sobre a música</p>
+             <button class="btn"><p style="color: #1d1d1d; font-family: roboto;">Saiba mais</p></button>
+ 
+        </div>
+     </div>
+     
+ 
+     </section>
+    </section>
+   
+    <section class="sec two" id="dois">
+     
+        <div class="alignCircle">
+            <div class="alignColumn">
+                <div class="circulo cardCircle" id="circles5"><p class="textoNor" id="titulo5" style="font-size: 18px; font-weight: 500;">ODS 4</p><p class="textoNor" id="textoCirculo5">A aprendizagem musical pode contribuir para uma educação de qualidade, proporcionando aos alunos oportunidades de desenvolver habilidades criativas, cognitivas e sociais, além de promover a inclusão e a diversidade cultural.</p></div>
+                <p>Educação de Qualidade</p>
+            </div>
+            <div class="alignColumn">
+                <div class="circulo cardCircle" id="circles6"><p class="textoNor" id="titulo6" style="font-size: 18px; font-weight: 500;">ODS 3</p><p class="textoNor" id="textoCirculo6"> A música é conhecida por ter efeitos terapêuticos e pode contribuir para o bem-estar emocional, mental e físico das pessoas. Programas de aprendizagem musical podem ser uma forma de promover o bem-estar e a saúde mental.</p></div>
+                <p>Saúde e bem estar</p>
+            </div>
+            <div class="alignColumn">
+                <div class="circulo cardCircle" id="circles7"><p class="textoNor" id="titulo7" style="font-size: 18px; font-weight: 500;">ODS 17</p><p class="textoNor" id="textoCirculo7"> A música pode ser uma ferramenta poderosa para promover a inclusão social e reduzir as desigualdades. Através da educação musical, é possível oferecer oportunidades iguais de acesso à cultura e à expressão.</p></div>
+                <p>Redução das Desigualdades </p>
+            </div>
+            
+
+        </div>
+        <div class="textoAbsolute" style="top: 0%;" id="textoAlign">
+            <p class="titulo">Pilares</p>
+            <p class="subtitulo">Da onu</p>
         </div>
     </section>
     <section class="sec tree" id="tres">
@@ -138,6 +183,7 @@
                     <p>Não sou cadastrado</p>
                 </div>
             </div>
+            
 
 
         </div>
@@ -179,26 +225,7 @@
 
 
         </div>
-    </section>
-    <section class="sec four">
-       <div class="gradiente"></div>
-     
-       <div class="alignAbout"> 
-       <img src="/assets/skeleton.png" alt="" class="imgPessoa">
-
-         <div class="aboutUs">
-            <p class="texto" style="font-size: 42px; font-weight: 400;">Oi, eu sou</p>
-            <p class="alt" style="font-size: 62px; height: 64px;">Samuel luciano</p>
-            <p class="texto" style=" font-weight: 400; height: 42px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolore optio quidem cupiditate veniam consequatur, dignissimos ex? Ipsam in explicabo officia ut, atque quaerat, aperiam eaque inventore, eligendi cum aliquid.</p>
-            <button class="btn"><p style="color: #1d1d1d; font-family: roboto;">Saiba mais</p></button>
-
-       </div>
-    </div>
     
-
-    </section>
-
-
 </body>
 
 </html>
@@ -219,13 +246,41 @@
    
     ) {
      
-        console.log("(Mensagem de erro para todos os campos em branco)")
+    Swal.fire({
+  icon: "error",
+  title: "Calma lá",
+  text: "Nenhum campo pode estar vazio, verifique se está tudo certo.",
+  confirmButtonColor: "#3498db"
+
+});
 
       finalizarAguardar();
       return false;
     } else {
      
     }
+    if(senhaVar < 8){
+
+        Swal.fire({
+  icon: "error",
+  title: "Dessa vez foi quase",
+  text: "A senha precisa ter no  mínimo 8 caracteres.",
+  confirmButtonColor: "#3498db"
+
+});
+
+    } else if(emailVar.indexOf("@") == -1) {
+        Swal.fire({
+  icon: "error",
+  title: "Erros acontecem",
+  text: "O e-mail precisa conter um @.",
+  confirmButtonColor: "#3498db"
+
+});
+
+    }
+
+    else {
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -275,6 +330,7 @@
       });
 
     return false;
+}
   }
 
   function entrar() {
@@ -284,8 +340,13 @@
         var senhaVar = senha_inputLog.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            Swal.fire({
+  icon: "error",
+  title: "Atenção querido usuario(a)",
+  text: "Cuidado, nenhum campo pode estar vazio",
+  confirmButtonColor: "#3498db"
+
+});
             finalizarAguardar();
             return false;
         }
@@ -327,7 +388,13 @@
 
             } else {
 
-                console.log("Houve um erro ao tentar realizar o login!");
+                Swal.fire({
+  icon: "error",
+  title: "Dessa vez foi quase",
+  text: "Houve um erro ao realizar o login, verifique se o e-mail e a senha estão corretos",
+  confirmButtonColor: "#3498db"
+
+});
 
                 resposta.text().then(texto => {
                     console.error(texto);
@@ -348,6 +415,9 @@
     var circuloBol2 = false
     var circuloBol3 = false
     var circuloBol4 = false
+    var circuloBol5 = false
+    var circuloBol6 = false
+    var circuloBol7 = false
     addEventListener("mousemove", scrol(event));
     function modalNav() {
         nav = document.getElementById('nav')
@@ -385,8 +455,51 @@
         logForm.classList.toggle('invisible')
     }
 
+   
+    function modalcircle6() {
+        var circle6 = document.getElementById('circles6')
+          var text = document.getElementById('textoCirculo6')
+        var titulo = document.getElementById('titulo6')
+        setTimeout(()=> {
+            
+        text.classList.toggle('textoDis')
+        titulo.classList.toggle('textoDis')
+
+
+        }, 0)
+
+
+        circle6.classList.toggle('cardCircle')
+
+        if (circuloBol6) {
+            circuloBol6 = false
+        } else {
+            circuloBol6 = true
+
+
+        }
+        if (circuloBol5 || circuloBol7 || circuloBol6) {
+
+            var textoAlign = document.getElementById('textoAlignAlt')
+            textoAlign.classList.add('ativo')
+        } else if (circuloBol5 == false && circuloBol7 == false && circuloBol6 == false) {
+            var textoAlign = document.getElementById('textoAlignAlt')
+            textoAlign.classList.remove('ativo')
+
+        }
+
+    }
     function modalCircle2() {
         var circle2 = document.getElementById('circles2')
+          var text = document.getElementById('textoCirculo2')
+        var titulo = document.getElementById('titulo2')
+        setTimeout(()=> {
+            
+        text.classList.toggle('textoDis')
+        titulo.classList.toggle('textoDis')
+
+
+        }, 0)
 
 
         circle2.classList.toggle('cardCircle')
@@ -409,8 +522,20 @@
         }
 
     }
+   
+    
+    
     function modalCircle3() {
         var circle3 = document.getElementById('circles3')
+        var text = document.getElementById('textoCirculo3')
+        var titulo = document.getElementById('titulo3')
+        setTimeout(()=> {
+            
+        text.classList.toggle('textoDis')
+        titulo.classList.toggle('textoDis')
+
+
+        }, 0)
 
         circle3.classList.toggle('cardCircle')
         if (circuloBol3) {
@@ -433,6 +558,15 @@
     }
     function modalCircle4() {
         var circle4 = document.getElementById('circles4')
+        var text = document.getElementById('textoCirculo4')
+        var titulo = document.getElementById('titulo4')
+        setTimeout(()=> {
+            
+        text.classList.toggle('textoDis')
+        titulo.classList.toggle('textoDis')
+
+
+        }, 0)
 
         circle4.classList.toggle('cardCircle')
         if (circuloBol4) {
@@ -494,5 +628,6 @@
         }
 
     }
+ 
 
 </script>

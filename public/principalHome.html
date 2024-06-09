@@ -54,7 +54,7 @@
 
         <div id="container" class="contNav" style="margin-top: 4rem;">
             <div class="wraper"><img src="/assets/sair.png" alt="" class="icone">
-                <p style="color: #ffff; font-weight: 300;">Sair</p>
+                <p style="color: #ffff; font-weight: 300;" onclick="sair()">Sair</p>
             </div>
 
         </div>
@@ -75,45 +75,67 @@
         </div>
         <div class="container">
 
-            <div class="tecla" id="dó" onclick="ativarDo()">
+            <div  class="tecla" id="dó" onclick="ativarDo(), playDo()">
+                <audio id="popup-sound" src="./assets/key12.mp3"></audio>
                 <div class="indicador um"></div>
             </div>
-            <div class="tecla" id="ré" onclick="ativarRe()">
+            <div class="tecla" id="ré" onclick="ativarRe(), playRe()">
+                <audio id="popup-soundRe" src="./assets/key14.mp3"></audio>
                 <div class="indicador dois"></div>
             </div>
-            <div class="tecla" id="mi" onclick="ativarMi()">
+            <div class="tecla" id="mi" onclick="ativarMi(), playMi()">
+                <audio id="popup-soundMi" src="./assets/key16.mp3"></audio>
+
                 <div class="indicador tres"></div>
             </div>
-            <div class="tecla" id="fa" onclick="ativarFa()">
+            <div class="tecla" id="fa" onclick="ativarFa(), playFa()">
+                <audio id="popup-soundFa" src="./assets/key17.mp3"></audio>
+
                 <div class="indicador quatro"></div>
             </div>
-            <div class="tecla" id="sol" onclick="ativarSol()">
+            <div class="tecla" id="sol" onclick="ativarSol(), playSol()">
+                <audio id="popup-soundSol" src="./assets/key19.mp3"></audio>
+
                 <div class="indicador cinco"></div>
             </div>
-            <div class="tecla" id="la" onclick="ativarLa()">
+            <div class="tecla" id="la" onclick="ativarLa(), playLa()">
+                <audio id="popup-soundLa" src="./assets/key21.mp3"></audio>
+
                 <div class="indicador seis"></div>
             </div>
-            <div class="tecla" id="si" onclick="ativarSi()">
+            <div class="tecla" id="si" onclick="ativarSi(), playSi()">
+                <audio id="popup-soundSi" src="./assets/key23.mp3"></audio>
+
                 <div class="indicador sete"></div>
             </div>
         </div>
         <div class="sustenidos" id="sus">
             <div class="div one">
-                <div class="tecla sus" id="dóSustenido" onclick="ativarDoSus()">
+                <div class="tecla sus" id="dóSustenido" onclick="ativarDoSus(), playDoSus()">
+                <audio id="popup-soundDoSus" src="./assets/key13.mp3"></audio>
+
                     <div class="indicador oito"></div>
                 </div>
-                <div class="tecla sus" id="réSustenido" onclick="ativarReSus()">
+                <div class="tecla sus" id="réSustenido" onclick="ativarReSus(), playReSus()">
+                <audio id="popup-soundReSus" src="./assets/key15.mp3"></audio>
+
                     <div class="indicador nove"></div>
                 </div>
             </div>
             <div class="div two">
-                <div class="tecla sus" id="faSustenido" onclick="ativarFaSus()">
+                <div class="tecla sus" id="faSustenido" onclick="ativarFaSus(), playFaSus()">
+                <audio id="popup-soundFaSus" src="./assets/key18.mp3"></audio>
+
                     <div class="indicador dez"></div>
                 </div>
-                <div class="tecla sus" id="solSustenido" onclick="ativarSolSus()">
+                <div class="tecla sus" id="solSustenido" onclick="ativarSolSus(), playSolSus()">
+                <audio id="popup-soundSolSus" src="./assets/key20.mp3"></audio>
+
                     <div class="indicador onze"></div>
                 </div>
-                <div class="tecla sus" id="laSustenido" onclick="ativarLaSus()">
+                <div class="tecla sus" id="laSustenido" onclick="ativarLaSus(), playLaSus()">
+                <audio id="popup-soundLaSus" src="./assets/key22.mp3"></audio>
+
                     <div class="indicador doze"></div>
                 </div>
             </div>
@@ -208,6 +230,54 @@
 
 </html>
 <script>
+    function playDo() {
+  var popupSound = document.getElementById('popup-sound');
+  popupSound.play();
+}
+    function playRe() {
+  var popRe = document.getElementById('popup-soundRe');
+  popRe.play();
+}
+    function playMi() {
+  var popMi = document.getElementById('popup-soundMi');
+  popMi.play();
+}
+    function playFa() {
+  var popFa = document.getElementById('popup-soundFa');
+  popFa.play();
+}
+    function playSol() {
+  var popSol = document.getElementById('popup-soundSol');
+  popSol.play();
+}
+    function playLa() {
+  var popLa = document.getElementById('popup-soundLa');
+  popLa.play();
+}
+    function playSi() {
+  var popSi = document.getElementById('popup-soundSi');
+  popSi.play();
+}
+    function playDoSus() {
+  var popDoSus = document.getElementById('popup-soundDoSus');
+  popDoSus.play();
+}
+    function playReSus() {
+  var popReSus = document.getElementById('popup-soundReSus');
+  popReSus.play();
+}
+    function playFaSus() {
+  var popFaSus = document.getElementById('popup-soundFaSus');
+  popFaSus.play();
+}
+    function playSolSus() {
+  var popSolSus = document.getElementById('popup-soundSolSus');
+  popSolSus.play();
+}
+    function playLaSus() {
+  var popLaSus = document.getElementById('popup-soundLaSus');
+  popLaSus.play();
+}
    
    
     var validateCad = false
@@ -1439,7 +1509,10 @@ if(acr > 100) {
 
 
     }
-
+    function sair() {
+        sessionStorage.clear()
+        window.location = "index.html";
+    }
 
 
 
