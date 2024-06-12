@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Músical Logic</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="./styleHome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="./js/sessao.js"></script>
+
+  <script src="./js/sessao.js"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mirza:wght@400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Vampiro+One&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <section class="sec one">
+
+        <!-- <nav id="nav" class="lateralNav">
+            <div onclick="modalNav()" class="hamburger"></div>
+        </nav> -->
+        <div class="container">
+
+            <div class="tecla" id="dó" onclick="ativarDo()"></div>
+            <div class="tecla" id="ré" onclick="ativarRe()"></div>
+            <div class="tecla" id="mi" onclick="ativarMi()"></div>
+            <div class="tecla" id="fa" onclick="ativarFa()"></div>
+            <div class="tecla" id="sol" onclick="ativarSol()"></div>
+            <div class="tecla" id="la" onclick="ativarLa()"></div>
+            <div class="tecla" id="si" onclick="ativarSi()"></div>
+        </div>
+        <div class="sustenidos">
+            <div class="div one">
+                <div class="tecla sus" id="dóSustenido" onclick="ativarDoSus()"></div>
+                <div class="tecla sus" id="réSustenido" onclick="ativarReSus()"></div>
+            </div>
+            <div class="div two">
+                <div class="tecla sus" id="faSustenido" onclick="ativarFaSus()"></div>
+                <div class="tecla sus" id="solSustenido" onclick="ativarSolSus()"></div>
+                <div class="tecla sus" id="laSustenido" onclick="ativarLaSus()"></div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="tituloBox">
+                <p class="titulo"> Músical </p>
+                <p class="subtitulo"> logic </p>
+            </div>
+
+
+            <div class="textos" id="meu-container">
+                <p>
+                    
+                </p>
+            </div>
+
+            <div class="btn_alt">
+                <a href="#tres" class="alt" style="text-decoration: none; color: #1d1d1d; cursor: pointer;"> TESTAR
+                    AGORA</a>
+            </div>
+        </div>
+    </section>
+    <audio autoplay>
+        <source src="assets/download.mp3" type="audio/mp3">
+     
+      </audio>
+    <section class="sec two" id="dois">
+        <div class="textoAbsolute" id="textoAlign">
+            <p class="titulo">Benefícios</p>
+            <p class="subtitulo">Da música</p>
+        </div>
+        <div class="alignCircle">
+            <div class="alignColumn">
+                <div class="circulo" onclick="modalCircle()" id="circles"><p class="textoNor textoDis" id="titulo" style="font-size: 18px; font-weight: 500;">Desenvolvimento cognitivo</p><p class="textoNor textoDis" id="textoCirculo1">A música pode melhorar habilidades cognitivas, como memória, atenção e habilidades de resolução de problemas. tocar envolve muitos processos, como leitura de partituras, reconhecimento de padrões e coordenação motora.</p></div>
+                <p>Benefício 1</p>
+            </div>
+            <div class="alignColumn">
+                <div class="circulo" onclick="modalCircle2()" id="circles2"><p class="textoNor textoDis" id="titulo2" style="font-size: 18px; font-weight: 500;">Redução do estresse</p><p class="textoNor textoDis" id="textoCirculo2">Tocar um instrumento pode ser uma forma eficaz de aliviar o estresse e a ansiedade. A música tem o poder de acalmar a mente, reduzir a pressão sanguínea e promover a liberação de endorfinas, os "hormônios da felicidade".</p></div>
+                <p>Benefício 2</p>
+            </div>
+            <div class="alignColumn">
+                <div class="circulo" onclick="modalCircle3()" id="circles3"><p class="textoNor textoDis" id="titulo3" style="font-size: 18px; font-weight: 500;">Estímulo da criatividade</p><p class="textoNor textoDis" id="textoCirculo3">: A prática Músical encoraja a expressão individual e a experimentação. Compor músicas, improvisar e interpretar peças de diferentes estilos incentivam a criatividade e a imaginação.</p></div>
+                <p>Benefício 3</p>
+            </div>
+            <div class="alignColumn">
+                <div class="circulo" onclick="modalCircle4()" id="circles4"><p class="textoNor textoDis" id="titulo4" style="font-size: 18px; font-weight: 500;">Melhoria da autoestima</p><p class="textoNor textoDis" id="textoCirculo4">Dominar um instrumento ou desenvolver habilidades vocais pode aumentar a autoconfiança e a autoestima de uma pessoa. O senso de realização ao alcançar metas musicais, como aprender uma nova música ou se apresentar em público, pode ser imensamente gratificante.</p></div>
+                <p>Benefício 4</p>
+            </div>
+
+        </div>
+    </section>
+    <section class="sec four">
+        <div class="gradiente"></div>
+      
+        <div class="alignAbout"> 
+            <iframe width="600" height="400" src="https://www.youtube.com/embed/5nC-9I3tuFI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ 
+          <div class="aboutUs">
+             <p class="texto" style="font-size: 42px; font-weight: 400;">Oi, eu sou</p>
+             <p class="alt" style="font-size: 62px; height: 64px;">Samuel luciano</p>
+             <p class="texto" style=" font-weight: 400; height: 42px;">Sou desenvolvedor e músico, tenho conhecimento Músical há mais de 4 anos e sou professor de piano. Toco piano, guitarra, baixo e violão, e tenho o conhecimento necessário para fazer você mudar sua visão sobre a música</p>
+         
+        </div>
+     </div>
+     
+ 
+     </section>
+    </section>
+   
+    <section class="sec two" id="dois">
+     
+        <div class="alignCircle">
+            <div class="alignColumn">
+                <div class="circulo cardCircle" id="circles5"><p class="textoNor" id="titulo5" style="font-size: 18px; font-weight: 500;">ODS 4</p><p class="textoNor" id="textoCirculo5">A aprendizagem Músical pode contribuir para uma educação de qualidade, proporcionando aos alunos oportunidades de desenvolver habilidades criativas, cognitivas e sociais, além de promover a inclusão e a diversidade cultural.</p></div>
+                <p>Educação de Qualidade</p>
+            </div>
+            <div class="alignColumn">
+                <div class="circulo cardCircle" id="circles6"><p class="textoNor" id="titulo6" style="font-size: 18px; font-weight: 500;">ODS 3</p><p class="textoNor" id="textoCirculo6"> A música é conhecida por ter efeitos terapêuticos e pode contribuir para o bem-estar emocional, mental e físico das pessoas. Programas de aprendizagem Músical podem ser uma forma de promover o bem-estar e a saúde mental.</p></div>
+                <p>Saúde e bem estar</p>
+            </div>
+            <div class="alignColumn">
+                <div class="circulo cardCircle" id="circles7"><p class="textoNor" id="titulo7" style="font-size: 18px; font-weight: 500;">ODS 17</p><p class="textoNor" id="textoCirculo7"> A música pode ser uma ferramenta poderosa para promover a inclusão social e reduzir as desigualdades. Através da educação Músical, é possível oferecer oportunidades iguais de acesso à cultura e à expressão.</p></div>
+                <p>Redução das Desigualdades </p>
+            </div>
+            
+
+        </div>
+        <div class="textoAbsolute" style="top: 0%;" id="textoAlign">
+            <p class="titulo">Pilares</p>
+            <p class="subtitulo">Da onu</p>
+        </div>
+    </section>
+    <section class="sec tree" id="tres">
+        <div class="fundo">
+            <div class="cicle"></div>
+        <div class=" cicle umC"></div>
+            <div class="cicle doisC"></div>
+            <div class="contCadastro" id="cadastro">
+                <div class="loading-wave">
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                </div>
+                <div style="font-size: 52px; height: 62px;" class="alt">Não perca essa chance</div>
+                <div class="texto" style="width: 100%;">
+                    <p style="font-size: 18px; text-align: center;">O primeiro passo é seu, o resto deixa com a gente!
+                    </p>
+                </div>
+                <div class="texto" style="width: 80%;">
+                    <p style="font-weight: 400; text-align: center;">Crie uma conta totalmente gratuita para ter acesso
+                        a <b style="color: #3498db;">todos</b> benefícios que a <b style="color: #3498db;">Músical
+                            logic</b> tem a te oferecer</p>
+                </div>
+                <div class="botaoLogin" onclick="modalLog()">
+                    <p>Já sou cadastrado</p>
+                </div>
+            </div>
+            <div class="contLogin invisible " id="login">
+                <div class="loading-wave">
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                </div>
+                <div style="font-size: 52px; height: 62px;" class="alt">Olá novamente</div>
+                <div class="texto" style="width: 100%;">
+                    <p style="font-size: 18px; text-align: center;">O primeiro passo você já deu, obrigado! </p>
+                </div>
+                <div class="texto" style="width: 80%;">
+                    <p style="font-weight: 400; text-align: center;">Entre e continue seus desafios musicais aqui na Musical Logic. <b
+                            style="color: #3498db;">musicais</b> aqui na <b style="color: #3498db;">Músical logic</b>
+                    </p>
+                </div>
+                <div class="botaoLogin" onclick="modalCad()">
+                    <p>Não sou cadastrado</p>
+                </div>
+            </div>
+            
+
+
+        </div>
+        <!-- <div class="fundoCad">
+         
+             
+              
+        </div> -->
+        <div class="contLog invisible" id="logForm">
+
+            <div class="teclasCad"> <input type="text" class="inputTecla cad" placeholder="E-mail aqui" id="email_inputLog"> </div>
+
+            <div class="teclasCad"> <input type="text" class="inputTecla cad" placeholder="Senha" id="senha_inputLog"> </div>
+
+            <div class="teclasCad"> <button class="buttonCad" onclick="entrar()">
+                    <p class="alt" style="color: white; font-size: 70px;">Login</p>
+                </button> </div>
+
+            <div class="teclasCad">
+
+            </div>
+        </div>
+
+        <div class="contCad" id="cadForm">
+            <div class="teclasCad"> <input type="text" class="inputTecla" placeholder="Nome" id="nome_input"> </div>
+
+            <div class="teclasCad"> <input type="text" class="inputTecla" placeholder="E-mail aqui" id="email_input"> </div>
+
+            <div class="teclasCad"> <input type="password" class="inputTecla" placeholder="Senha"  id="senha_input"> </div>
+
+            <div class="teclasCad"> <button class="buttonCad" onclick="cadastrar()">
+                    <p class="alt" style="color: white; font-size: 70px;">Cadastrar</p>
+                </button> </div>
+
+            <div class="teclasCad">
+
+            </div>
+
+
+
+        </div>
+    
+</body>
+
+</html>
+<script>
+    
+        const textos = [
+            {texto: "A Músical Logic vai te ensinar escalas musicais de uma maneira fácil, divertida, eficaz e gratuita."},
+            {texto: "Cadastre-se agora para ter acesso aos nossos benefícios exclusivos!"},
+            {texto: " Aprender música nunca foi tão acessível e prazeroso. Não perca essa oportunidade de aprimorar suas habilidades musicais e explorar todo o potencial da sua criatividade. descubra um novo mundo de possibilidades musicais!"}
+        ];
+
+       
+        const container = document.getElementById('meu-container');
+
+
+        for (let i = 0; i < textos.length; i++) {
+            const texto = textos[i].texto;
+            const p = document.createElement('p');
+            p.innerHTML = texto;
+            container.appendChild(p);
+        }
+
+     function cadastrar() {
+    aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+  
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" 
+   
+    ) {
+     
+    Swal.fire({
+  icon: "error",
+  title: "Calma lá",
+  text: "Nenhum campo pode estar vazio, verifique se está tudo certo.",
+  confirmButtonColor: "#3498db"
+
+});
+
+      finalizarAguardar();
+      return false;
+    } else {
+     
+    }
+    if(senhaVar < 8){
+
+        Swal.fire({
+  icon: "error",
+  title: "Dessa vez foi quase",
+  text: "A senha precisa ter no  mínimo 8 caracteres.",
+  confirmButtonColor: "#3498db"
+
+});
+
+    } else if(emailVar.indexOf("@") == -1) {
+        Swal.fire({
+  icon: "error",
+  title: "Erros acontecem",
+  text: "O e-mail precisa conter um @.",
+  confirmButtonColor: "#3498db"
+
+});
+
+    }
+
+    else {
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+       
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          
+           console.log( "Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+
+          setTimeout(() => {
+        var cad = document.getElementById('cadastro')
+        var login = document.getElementById('login')
+        var logForm = document.getElementById('logForm')
+        var cadForm = document.getElementById('cadForm')
+
+        cadForm.classList.toggle('invisible')
+        logForm.classList.toggle('invisible')
+
+        cad.classList.toggle('invisible')
+        login.classList.toggle('invisible')
+         
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+}
+  }
+
+  function entrar() {
+        aguardar();
+
+        var emailVar = email_inputLog.value;
+        var senhaVar = senha_inputLog.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            Swal.fire({
+  icon: "error",
+  title: "Atenção querido usuario(a)",
+  text: "Cuidado, nenhum campo pode estar vazio",
+  confirmButtonColor: "#3498db"
+
+});
+            finalizarAguardar();
+            return false;
+        }
+        else {
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.COR_USUARIO = json.cor;
+             
+
+                    setTimeout(function () {
+                        window.location = "principalHome.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                Swal.fire({
+  icon: "error",
+  title: "Dessa vez foi quase",
+  text: "Houve um erro ao realizar o login, verifique se o e-mail e a senha estão corretos",
+  confirmButtonColor: "#3498db"
+
+});
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    
+
+    var circuloBol1 = false
+    var circuloBol2 = false
+    var circuloBol3 = false
+    var circuloBol4 = false
+    var circuloBol5 = false
+    var circuloBol6 = false
+    var circuloBol7 = false
+    addEventListener("mousemove", scrol(event));
+    function modalNav() {
+        nav = document.getElementById('nav')
+
+        nav.classList.toggle('ativo')
+    }
+    function scrol(event) {
+
+        console.log('oi')
+
+    }
+
+    function modalLog() {
+        var login = document.getElementById('login')
+        var cad = document.getElementById('cadastro')
+
+        cad.classList.toggle('invisible')
+        login.classList.toggle('invisible')
+        var logForm = document.getElementById('logForm')
+        var cadForm = document.getElementById('cadForm')
+
+        cadForm.classList.toggle('invisible')
+        logForm.classList.toggle('invisible')
+    }
+    function modalCad() {
+        var login = document.getElementById('login')
+        var cad = document.getElementById('cadastro')
+
+        cad.classList.toggle('invisible')
+        login.classList.toggle('invisible')
+        var logForm = document.getElementById('logForm')
+        var cadForm = document.getElementById('cadForm')
+
+        cadForm.classList.toggle('invisible')
+        logForm.classList.toggle('invisible')
+    }
+
+   
+    function modalcircle6() {
+        var circle6 = document.getElementById('circles6')
+          var text = document.getElementById('textoCirculo6')
+        var titulo = document.getElementById('titulo6')
+        setTimeout(()=> {
+            
+        text.classList.toggle('textoDis')
+        titulo.classList.toggle('textoDis')
+
+
+        }, 0)
+
+
+        circle6.classList.toggle('cardCircle')
+
+        if (circuloBol6) {
+            circuloBol6 = false
+        } else {
+            circuloBol6 = true
+
+
+        }
+        if (circuloBol5 || circuloBol7 || circuloBol6) {
+
+            var textoAlign = document.getElementById('textoAlignAlt')
+            textoAlign.classList.add('ativo')
+        } else if (circuloBol5 == false && circuloBol7 == false && circuloBol6 == false) {
+            var textoAlign = document.getElementById('textoAlignAlt')
+            textoAlign.classList.remove('ativo')
+
+        }
+
+    }
+    function modalCircle2() {
+        var circle2 = document.getElementById('circles2')
+          var text = document.getElementById('textoCirculo2')
+        var titulo = document.getElementById('titulo2')
+        setTimeout(()=> {
+            
+        text.classList.toggle('textoDis')
+        titulo.classList.toggle('textoDis')
+
+
+        }, 0)
+
+
+        circle2.classList.toggle('cardCircle')
+
+        if (circuloBol2) {
+            circuloBol2 = false
+        } else {
+            circuloBol2 = true
+
+
+        }
+        if (circuloBol1 || circuloBol2 || circuloBol3 || circuloBol4) {
+
+            var textoAlign = document.getElementById('textoAlign')
+            textoAlign.classList.add('ativo')
+        } else if (circuloBol1 == false && circuloBol2 == false && circuloBol3 == false && circuloBol4 == false) {
+            var textoAlign = document.getElementById('textoAlign')
+            textoAlign.classList.remove('ativo')
+
+        }
+
+    }
+   
+    
+    
+    function modalCircle3() {
+        var circle3 = document.getElementById('circles3')
+        var text = document.getElementById('textoCirculo3')
+        var titulo = document.getElementById('titulo3')
+        setTimeout(()=> {
+            
+        text.classList.toggle('textoDis')
+        titulo.classList.toggle('textoDis')
+
+
+        }, 0)
+
+        circle3.classList.toggle('cardCircle')
+        if (circuloBol3) {
+            circuloBol3 = false
+        } else {
+            circuloBol3 = true
+
+
+        }
+        if (circuloBol1 || circuloBol2 || circuloBol3 || circuloBol4) {
+
+            var textoAlign = document.getElementById('textoAlign')
+            textoAlign.classList.add('ativo')
+        } else if (circuloBol1 == false && circuloBol2 == false && circuloBol3 == false && circuloBol4 == false) {
+            var textoAlign = document.getElementById('textoAlign')
+            textoAlign.classList.remove('ativo')
+
+        }
+
+    }
+    function modalCircle4() {
+        var circle4 = document.getElementById('circles4')
+        var text = document.getElementById('textoCirculo4')
+        var titulo = document.getElementById('titulo4')
+        setTimeout(()=> {
+            
+        text.classList.toggle('textoDis')
+        titulo.classList.toggle('textoDis')
+
+
+        }, 0)
+
+        circle4.classList.toggle('cardCircle')
+        if (circuloBol4) {
+            circuloBol4 = false
+        } else {
+            circuloBol4 = true
+
+
+        }
+        if (circuloBol1 || circuloBol2 || circuloBol3 || circuloBol4) {
+
+            var textoAlign = document.getElementById('textoAlign')
+            textoAlign.classList.add('ativo')
+        } else if (circuloBol1 == false && circuloBol2 == false && circuloBol3 == false && circuloBol4 == false) {
+            var textoAlign = document.getElementById('textoAlign')
+            textoAlign.classList.remove('ativo')
+
+        }
+
+    }
+
+    function modalCircle() {
+        var circle = document.getElementById('circles')
+        var text = document.getElementById('textoCirculo1')
+        var titulo = document.getElementById('titulo')
+        setTimeout(()=> {
+            
+        text.classList.toggle('textoDis')
+        titulo.classList.toggle('textoDis')
+
+
+        }, 0)
+      
+       if(circuloBol1 == false) {
+        text.classList.add('textoDis')
+        titulo.classList.add('textoDis')
+
+
+       }
+
+        circle.classList.toggle('cardCircle')
+        if (circuloBol1) {
+            circuloBol1 = false
+        } else {
+            circuloBol1 = true
+
+            
+
+
+        }
+        if (circuloBol1 || circuloBol2 || circuloBol3 || circuloBol4) {
+
+            var textoAlign = document.getElementById('textoAlign')
+            textoAlign.classList.add('ativo')
+        } else if (circuloBol1 == false && circuloBol2 == false && circuloBol3 == false && circuloBol4 == false) {
+            var textoAlign = document.getElementById('textoAlign')
+            textoAlign.classList.remove('ativo')
+
+        }
+
+    }
+ 
+
+</script>
